@@ -31,7 +31,7 @@ function path2IconName(file) {
 }
 [
   '<link rel="import" href="../core-iconset-svg/core-iconset-svg.html">',
-  '<core-iconset-svg id="topeka-icons" iconSize="256">',
+  '<core-iconset-svg id="category-icons" iconSize="256">',
   '<svg><defs>'
 ].forEach(function(l) {
   console.log(l);
