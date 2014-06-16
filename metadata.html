@@ -13,7 +13,7 @@
 
 </x-meta>
 
-<x-meta id="category-icons" label="Topeka Icon" group="Topeka" hideSubtree>
+<x-meta id="topeka-icon" label="Topeka Icon" group="Topeka" hideSubtree>
 
   <template>
     <core-icon icon="category-icons:food" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
@@ -24,17 +24,21 @@
     <link rel="import" href="../core-icon/core-icon.html">
   </template>
 
+  <property name="icon" kind="select" options="category-icons:food,category-icons:knowledge,category-icons:history,category-icons:geography,category-icons:science,category-icons:tvmovies,category-icons:music,category-icons:entertainment,category-icons:sports"></property>
+
 </x-meta>
 
-<x-meta id="topeka-background" label="Topeka Background" group="Topeka" hideSubtree>
+<x-meta id="topeka-image" label="Topeka Background" group="Topeka" hideSubtree>
 
   <template>
-    <core-icon icon="category-images:food" size="0" style="height: 256px; width: 256px;" designMeta="topeka-background"></core-icon>
+    <core-icon icon="category-images:food" size="0" style="height: 256px; width: 256px;" designMeta="topeka-image"></core-icon>
   </template>
 
   <template id="imports">
     <link rel="import" href="category-images.html">
     <link rel="import" href="../core-icon/core-icon.html">
   </template>
+
+   <property name="icon" kind="select" options="category-images:food,category-images:knowledge,category-images:history,category-images:geography,category-images:science,category-images:tvmovies,category-images:music,category-images:entertainment,category-images:sports"></property>
 
 </x-meta>
