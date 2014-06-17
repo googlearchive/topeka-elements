@@ -14,11 +14,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   background-color: #424242;
 }
 
-.categories-panel > core-toolbar {
+.category-toolbar {
   height: 100px;
+  z-index: 1;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
-.categories-panel > core-toolbar::shadow #topBar {
+.category-toolbar::shadow #topBar {
   height: 100px;
 }
 
