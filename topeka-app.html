@@ -62,8 +62,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     ready: function() {
       this.readyTime = Date.now();
+
+      // set up history state
+      if (!history.state) {
+        history.pushState('topeka');
+      }
+
+      // "back" button will show categories, unless in profile screen
+      window.onpopstate = function() {
+        if (this.selected !== 'profile') {
+          this.showCategories();
+        }
+        // repopulate history state so we get the popstate event again
+        history.pushState('topeka');
+      }.bind(this);
     },
-    
+
     eventDelegates: {
       'main': 'showCategories',
       'score-update': 'computeScore'
