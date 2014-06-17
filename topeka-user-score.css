@@ -26,6 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .main .big {
   font-size: 100px;
+  line-height: 128px;
 }
 
 .category-info {
