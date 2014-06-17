@@ -55,6 +55,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     computed: {
       'scores': 'computeScores(allScores, category, dirty)'
     },
+
+    created: function() {
+      this.scores = [];
+      this.category = {quizies: []};
+    },
     
     computeScores: function(user, category) {
       if (this.allScores && category && category.quizzes) {

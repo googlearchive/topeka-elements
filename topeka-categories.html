@@ -86,6 +86,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     wide: false,
 
+    created: function() {
+      this.categories = [];
+    },
+
     selectedChanged: function() {
       // first one is leaderboard, last one is profile
       if (this.selected === 0) {
