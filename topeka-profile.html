@@ -98,7 +98,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <div class="main" flex layout vertical hero-p?="{{parentElement.lastSelected !== 'splash'}}" cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
     <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical hero-id="profile" hero?="{{parentElement.selected === 'profile'}}" slide-up-offscreen?="{{parentElement.selected !== 'profile'}}">
-      <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash'}}">
+      <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash'}}" on-keypress="{{ keypressAction }}">
         <div class="header">{{userDefaults ? 'Your Profile' : 'Sign In'}}</div>
         <paper-input label="First Name" id="first"></paper-input>
         <paper-input label="Last Initial" id="last" maxlength="1"></paper-input>
@@ -126,6 +126,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script>
 
   Polymer('topeka-profile', {
+
+    // tab through the input fields on "Enter"
+    keypressAction: function(ev) {
+      var code = ev.keyCode || ev.charCode;
+      var key = ev.keyIdentifier;
+      if (key === 'Enter' || code === 13) {
+        var target = ev.target;
+        if (target === this.$.first) {
+          // TODO(dfreedm): calling the focus event handler in lieu of a real api
+          this.$.last.focusAction();
+        } else if (target === this.$.last) {
+          // after "last" field, lower keyboard to show avatar list
+          this.$.last.blur();
+        }
+      }
+    },
 
     ready: function() {
       if (!this.user) {
