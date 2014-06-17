@@ -55,6 +55,9 @@
     <link rel="import" href="topeka-app.html">
   </template>
 
+  <property name="user" kind="json"></property>
+  <property name="categories" kind="json"></property>
+
 </x-meta>
 
 <x-meta id="topeka-categories" label="Topeka Categories" group="Topeka" hideSubtree>
@@ -88,7 +91,7 @@
 <x-meta id="topeka-datasource" label="Topeka Datasource" group="Topeka" hideSubtree>
 
   <template>
-    <topeka-datasource></topeka-datasource>
+    <topeka-datasource url="components/topeka-elements/categories.json"></topeka-datasource>
   </template>
 
   <template id="imports">
@@ -136,7 +139,6 @@
   </template>
 
   <property name="category" kind="json"></property>
-  <property name="scores" kind="json"></property>
 </x-meta>
 
 <x-meta id="topeka-quiz-view" label="Topeka Quiz View" group="Topeka" hideSubtree>
@@ -150,5 +152,7 @@
     <link rel="import" href="topeka-resources.html">
     <link rel="import" href="topeka-quiz-view.html">
   </template>
+
+  <property name="quiz" kind="json"></property>
 
 </x-meta>
