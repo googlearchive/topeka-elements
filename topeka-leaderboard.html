@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../firebase-element/firebase-element.html">
 <link rel="import" href="avatars.html">
 
-<polymer-element name="topeka-leaderboard" attributes="user wide limit tvmode columns disabled duration" vertical layout>
+<polymer-element name="topeka-leaderboard" vertical layout>
 <template>
 
   <style>
@@ -171,25 +171,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       limit: 20,
       columns: false,
       tvmode: false,
-      duration: -1
+      duration: -1,
+      user: null,
+      wide: false,
+      offline: false
+    },
+
+    observe: {
+      'limit offline': 'updateLeaderboard'
     },
     
     selected: 0,
-    offline: true,
     MAX: 1800,
 
     names: ['James','John','Robert','Michael','William','David','Richard','Joseph','Charles','Thomas','Christopher','Daniel','Matthew','Donald','Anthony','Paul','Mark','George','Steven','Kenneth','Andrew','Edward','Joshua','Brian','Kevin','Ronald','Timothy','Jason','Jeffrey','Gary','Ryan','Nicholas','Eric','Jacob','Stephen','Jonathan','Larry','Frank','Scott','Justin','Brandon','Raymond','Gregory','Samuel','Benjamin','Patrick','Jack','Dennis','Jerry','Alexander','Tyler','Henry','Douglas','Peter','Aaron','Walter','Jose','Adam','Zachary','Harold','Nathan','Kyle','Carl','Arthur','Gerald','Roger','Lawrence','Keith','Albert','Jeremy','Terry','Joe','Sean','Willie','Jesse','Austin','Christian','Ralph','Billy','Bruce','Bryan','Roy','Eugene','Ethan','Louis','Wayne','Jordan','Harry','Russell','Alan','Juan','Philip','Randy','Dylan','Howard','Vincent','Bobby','Johnny','Phillip','Shawn','Mary','Patricia','Jennifer','Elizabeth','Linda','Barbara','Susan','Margaret','Jessica','Dorothy','Sarah','Karen','Nancy','Betty','Lisa','Sandra','Helen','Ashley','Donna','Kimberly','Carol','Michelle','Emily','Amanda','Melissa','Deborah','Laura','Stephanie','Rebecca','Sharon','Cynthia','Kathleen','Ruth','Anna','Shirley','Amy','Angela','Virginia','Brenda','Pamela','Catherine','Katherine','Nicole','Christine','Janet','Debra','Samantha','Carolyn','Rachel','Heather','Maria','Diane','Frances','Joyce','Julie','Emma','Evelyn','Martha','Joan','Kelly','Christina','Lauren','Judith','Alice','Victoria','Doris','Ann','Jean','Cheryl','Marie','Megan','Kathryn','Andrea','Jacqueline','Gloria','Teresa','Janice','Sara','Rose','Hannah','Julia','Theresa','Judy','Grace','Beverly','Denise','Marilyn','Mildred','Amber','Danielle','Brittany','Olivia','Diana','Jane','Lori','Madison','Tiffany','Kathy','Tammy','Crystal'],
 
     ready: function() {
-      this.offline =
-        window.location.search.indexOf('offline') >= 0 ||
-        window.location.search.indexOf('test') >= 0;;
-        if (this.offline) {
-          this.generateLeaderboard();
-        }
+      this.lastScores = {};
+      if (!this.offline) {
+        this.offline =
+            window.location.search.indexOf('offline') >= 0 ||
+            window.location.search.indexOf('test') >= 0;
+      }
     },
 
-    limitChanged: function() {
+    updateLeaderboard: function() {
       if (this.offline) {
         this.generateLeaderboard();
       }
@@ -252,7 +258,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }.bind(this), Math.random() * 10000);
     },
 
-    lastScores: {},
     leaderboardChange: function() {
       var data = this.leaderboard;
       var uids = Object.keys(data);
@@ -275,6 +280,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.flipPages(items);
       }
     },
+
     flipPages: function(newItems) {
       var order = newItems.map(function(u) {
         return u.uid;
@@ -300,6 +306,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       this.selected = this.selected ? 0 : 1;
     },
+
     done: function() {
       this.lastScores = this.newScores;
       if (this.queuedItems) {
@@ -313,9 +320,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       }
     },
+
     mainAction: function() {
       this.fire('main');
     },
+
     durationChanged: function() {
       if (this.duration > 0) {
         CoreStyle.g.transitions.duration = this.duration;
