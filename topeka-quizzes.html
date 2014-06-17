@@ -57,9 +57,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     wide: false,
     answered: false,
     icon: 'check',
+    avatar: 1,
     
     observe: {
       'category': 'update'
+    },
+
+    created: function() {
+      this.scores = [];
     },
     
     update: function() {
