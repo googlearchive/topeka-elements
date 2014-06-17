@@ -63,9 +63,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     ready: function() {
       this.readyTime = Date.now();
 
+      var dummyState = {app: 'topeka'};
       // set up history state
       if (!history.state) {
-        history.pushState('topeka');
+        history.pushState(dummyState, '', '');
       }
 
       // "back" button will show categories, unless in profile screen
@@ -74,7 +75,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           this.showCategories();
         }
         // repopulate history state so we get the popstate event again
-        history.pushState('topeka');
+        history.pushState(dummyState, '', '');
       }.bind(this);
     },
 
