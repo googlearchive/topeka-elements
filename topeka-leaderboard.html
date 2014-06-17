@@ -9,9 +9,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../core-toolbar/core-toolbar.html">
 <link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/iconsets/icons.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../firebase-element/firebase-element.html">
+<link rel="import" href="theme.html">
 <link rel="import" href="avatars.html">
 
 <polymer-element name="topeka-leaderboard" vertical layout>
@@ -24,18 +26,42 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       box-sizing: border-box;
       width: 100%;
     }
+
     .wide.card {
       width: 512px;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     }
+
     .wide.card.multi-column {
       width: 100%;
       height: 100%;
     }
+
+    .main-button {
+      position: absolute;
+      top: 12px;
+      left: 8px;
+      fill: white;
+    }
+
+    .main-button.wide {
+      top: 12px;
+      left: 16px;
+    }
+
+    .title {
+      padding-left: 56px;
+      font-size: 14px;
+    }
+    .tvmode .title {
+      font-size: 24px;
+    }
+
     .scroll {
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
+
     .multi-column .list {
       display: -webkit-flex;
       display: flex;
@@ -44,49 +70,63 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       -webkit-align-content: stretch;
       align-content: stretch;
     }
+
     .item {
       background-color: #f5f5f5;
       height: 56px;
       padding: 8px 16px;
-      border-radius: 3px;
       box-sizing: border-box;
       position: relative;
-      font-size: 18pt;
-      max-width: 900px;
+      font-size: 18px;
+      transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.28s;
     }
+    .multi-column .item {
+      padding: 16px 32px;
+    }
+
     [animate] .item.rising {
-      box-shadow: 0px 5px 10px 0px rgba(50, 50, 50, 0.6);
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       z-index: 10001 !important;
       background-color: white;
     }
+
     [animate] .item.rising .rankNo {
       display: none;
     }
+    .multi-column [animate] .item.rising {
+    }
+
     .delta {
       display: none;
       padding-right: 32px;
       color: #00bbd3;
       font-weight: bold;
     }
+
     [animate] .item.rising .delta {
       display: inline-block;
     }
+
     .arrow {
       display: none;
       -webkit-transform: rotate(90deg);
     }
+
     [animate] .item.rising .arrow {
       display: inline-block;
     }
+
     .rank {
       width: 56px;
     }
+
     .avatar {
       height: 40px;
       width: 40px;
       border-radius: 50%;
       overflow: hidden;
     }
+
     .name {
       padding-left: 48px;
       white-space: nowrap;
@@ -94,6 +134,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       text-overflow: ellipsis;
       padding-right: 16px;
     }
+
     .main {
       position: relative;
     }
@@ -108,6 +149,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     :host([animate]:not(.core-selected)) .bg {
       z-index: -1;
     }
+
   </style>
 
   <firebase-element id="fbLeaderboard" location="{{offline ? null : 'https://polymer-topeka.firebaseio.com/users'}}" on-data-change="{{leaderboardChange}}" data="{{leaderboard}}" limit="{{limit}}"></firebase-element>
@@ -115,41 +157,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="bg" fit dummy cross-fade></div>
 
   <div class="main" flex center layout vertical hero-p>
-    <div flex hero-id="leaderboard" hero?="{{parentElement.selected === 'leaderboard'}}" slide-up-offscreen?="{{parentElement.selected !== 'leaderboard'}}" class="card {{ {wide: wide, 'multi-column': columns} | tokenList }}" relative>
+    <div flex hero-id="leaderboard" hero?="{{parentElement.selected === 'leaderboard'}}" slide-up-offscreen?="{{parentElement.selected !== 'leaderboard'}}" class="card {{ {wide: wide, 'multi-column': columns>1, tvmode: tvmode} | tokenList }}" relative>
       <div vertical layout fit cross-fade-delayed>
-        <core-toolbar>
-          <paper-icon-button icon="arrow-back" on-tap="{{mainAction}}"></paper-icon-button>
-          <div>Leaderboard</div>
+        <core-toolbar hidden?="{{wide}}">
+          <div class="title">Leaderboard</div>
         </core-toolbar>
 
         <div class="scroll" layout vertical flex>
-          <core-animated-pages id="pages" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition" layout flex?="{{columns}}">
+          <core-animated-pages id="pages" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition" layout flex?="{{columns>1}}">
 
-            <section class="list {{ {tvmode: tvmode} | tokenList }}" layout>
+            <section class="list" layout>
               <template repeat="{{u,i in items1}}">
-                <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" layout horizontal center>
+                <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
                   <div class="rank">
                     <div class="rankNo">{{i+1}}</div>
                     <core-icon class="arrow" icon="arrow-back"></core-icon>
                   </div>
                   <core-icon size="40" class="avatar" icon="avatars:avatar-{{u.avatar}}"></core-icon>
                   <div layout flex class="name">{{u.name}}</div>
-                  <div class="delta" xhidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
+                  <div class="delta" hidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
                   <div>{{u.score}}</div>
                 </div>
               </template>
             </section>
 
-            <section class="list {{ {tvmode: tvmode} | tokenList }}" layout>
+            <section class="list" layout>
               <template repeat="{{u,i in items2}}">
-                <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" layout horizontal center>
+                <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
                   <div class="rank">
                     <div class="rankNo">{{i+1}}</div>
                     <core-icon class="arrow" icon="arrow-back"></core-icon>
                   </div>
                   <core-icon size="40" class="avatar" icon="avatars:avatar-{{u.avatar}}"></core-icon>
                   <div layout flex class="name">{{u.name}}</div>
-                  <div class="delta" xhidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
+                  <div class="delta" hidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
                   <div>{{u.score}}</div>
                 </div>
               </template>
@@ -159,6 +200,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
       </div>
     </div>
+    <paper-icon-button hidden?="{{tvmode}}" class="main-button {{ {wide: wide} | tokenList }}" icon="arrow-back" on-tap="{{mainAction}}" cross-fade-delayed?="{{!disabled}}" hero?="{{!disabled}}"></paper-icon-button>
   </div>
 
 </template>
@@ -169,7 +211,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     publish: {
       disabled: false,
       limit: 20,
-      columns: false,
+      columns: 1,
       tvmode: false,
       duration: -1,
       user: null,
@@ -198,6 +240,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     updateLeaderboard: function() {
       if (this.offline) {
         this.generateLeaderboard();
+      } else {
+        if (this.bumpTimeout) {
+          clearTimeout(this.bumpTimeout);
+        }
+        this.items1 = this.items2 = [];
       }
     },
 
@@ -224,7 +271,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }.bind(this), 2000);
         if (this.offline) {
           this.bumpScores();
-        } else if (this.queuedItems) {
+        }
+        if (this.queuedItems) {
           this.items1 = this.items2 = this.queuedItems;
           this.queuedItems = null;
         }
@@ -235,27 +283,23 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     userChanged: function() {
       if (this.offline && this.user) {
-        this.leaderboard.me = {
-          name: this.user.name,
-          avatar: this.user.avatar,
-          score: this.user.score
-        };
+        this.leaderboard.me = this.user;
       }
     },
 
     bumpScores: function() {
       for (uid in this.leaderboard) {
         var u = this.leaderboard[uid];
-        if ((Math.random() > 0.9) && (!this.user || u.name != this.user.name)) {
+        if ((Math.random() > (1-1/this.limit)) && (!this.user || uid != 'me')) {
           u.score += 8;
         }
       }
       this.leaderboardChange();
-      setTimeout(function() {
+      this.bumpTimeout = setTimeout(function() {
         if (!this.disabled) {
           this.bumpScores();
         }
-      }.bind(this), Math.random() * 10000);
+      }.bind(this), Math.random() * 5000);
     },
 
     leaderboardChange: function() {
@@ -266,7 +310,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.newScores[u] = data[u].score;
         return { uid: u, name: data[u].name, avatar: data[u].avatar, score: data[u].score};
       }.bind(this)).sort(function(a, b) {
-        return b.score - a.score;
+        return b.score - a.score || a.name && b.name && a.name.localeCompare(b.name);
       });
       if (this.holdoff) {
         if (!this.items1) {
