@@ -46,6 +46,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       color: #00bbd3;
       font-weight: lighter;
     }
+
     .topeka-avatar {
       width: 70px;
       height: 70px;
@@ -53,18 +54,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       display: inline-block;
       overflow: hidden;
     }
+
     .avatar-wrapper {
       display: inline-block;
       padding: 5px;
     }
+
     .avatar-wrapper.core-selected {
       background-color: #00bbd3;
     }
+
     #avatarList {
       margin: 24px 0 8px 0;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
+
     #check {
       width: 56px;
       height: 56px;
@@ -90,6 +95,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     :host([animate]:not(.core-selected)) .bg {
       z-index: -1;
+    }
+
+    paper-input {
+      max-width: 20em;
+      width: auto;
     }
 
   </style>
