@@ -86,7 +86,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 /* red theme */
 .red-theme /deep/ .theme-bg,
 .red-theme.theme-bg {
-  background-color: #db4437;
+  background-color: #ff5252;
   color: #fff;
   fill: #fff;
 }
@@ -102,15 +102,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .red-theme /deep/ .theme-icon {
-  fill: #db4437;
+  fill: #ff5252;
 }
 
 .red-theme /deep/ .theme-primary-color {
-  color: #db4437;
+  color: #ff5252;
 }
 
 .red-theme /deep/ .theme-border-color {
-  border-color: #db4437;
+  border-color: #ff5252;
 }
 
 .red-theme /deep/ paper-progress::shadow #progressContainer {
@@ -118,7 +118,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .red-theme /deep/ paper-progress::shadow #activeProgress {
-  background-color: #db4437;
+  background-color: #ff5252;
 }
 
 /* blue theme */
