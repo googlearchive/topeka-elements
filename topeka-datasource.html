@@ -11,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../firebase-element/firebase-element.html">
 <link rel="import" href="../firebase-element/firebase-login.html">
 
-<polymer-element name="topeka-datasource" noscript hidden>
+<polymer-element name="topeka-datasource" hidden>
 <template>
   
   <firebase-login id="fbLogin" provider="anonymous" params='{"rememberMe": true}' location="https://polymer-topeka.firebaseio.com" user="{{fbUser}}" statusKnown="{{statusKnown}}"></firebase-login>
@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     publish: {
       user: null,
       categories: null,
-      url: null,
+      url: '',
       connected: false
     },
 
