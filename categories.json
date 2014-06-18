@@ -818,7 +818,7 @@
                     "Richard Attenborough",
                     "Emmet Brown"
                 ],
-                "answer": "Richard Attenborough"
+                "answer": 2
             },
             {
                 "type": "picker",
