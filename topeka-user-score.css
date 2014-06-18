@@ -7,6 +7,15 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 */
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+.score-panel {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .wide .card {
   width: 512px;
   margin: 64px auto 0;
