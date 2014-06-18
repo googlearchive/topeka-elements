@@ -18,14 +18,14 @@ function transmogrify($, name) {
   var node = $('svg');
   var innerHTML = $.xml(node.children());
   // remove extraneous whitespace
-  innerHTML = innerHTML.replace(/\t|\r|\n/g, ''); 
+  innerHTML = innerHTML.replace(/\t|\r|\n/g, '');
   var output = '<g id="' + name + '">' + innerHTML + '</g>';
   // print icon svg
   console.log(output);
 }
 
 function path2IconName(file) {
-  parts = path.basename(file).split('-');
+  parts = path.basename(file, '.svg').split('-');
   parts.pop();
   return parts.join('-');
 }
