@@ -38,9 +38,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <div class="tile" flex vertical layout hero?="{{!category}}">
           <div flex></div>
-          <div class="cat-name" horizontal center layout>Leaderboard</div>
+          <div class="cat-name" horizontal center layout>
+            <div flex>Leaderboard</div>
+            <core-icon class="category-icon" icon="arrow-forward"></core-icon>
+          </div>
         </div>
-        <core-icon class="category-icon" icon="arrow-forward"></core-icon>
       </div>
     
       <template repeat="{{cat, i in categories}}">
@@ -52,10 +54,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </div>
             <div class="tile" flex vertical layout>
               <div flex></div>
-              <div class="cat-name theme-bg" horizontal center layout hero-id="{{category.name === cat.name ? 'punch-bottom' : ''}}" hero?="{{category.name === cat.name}}">{{cat.name}}</div>
+              <div class="cat-name theme-bg" horizontal center layout hero-id="{{category.name === cat.name ? 'punch-bottom' : ''}}" hero?="{{category.name === cat.name}}">
+                <div flex>{{cat.name}}</div>
+                <core-icon class="category-icon theme-bg" icon="av:play-arrow" hidden?="{{scores.length === cat.quizzes.length}}"></core-icon>
+              </div>
             </div>
-            <core-icon class="category-icon theme-bg" icon="av:play-arrow" hidden?="{{scores.length === cat.quizzes.length}}"></core-icon>
-            <!-- <core-icon class="category-icon {{ scores.length == cat.quizzes.length ? 'theme-icon' : 'theme-bg' }}" icon="{{ scores.length == cat.quizzes.length ? 'check' : 'av:play-arrow' }}"></core-icon> -->
           </div>
         </template>
       
@@ -67,9 +70,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </div>
         <div class="tile" flex vertical layout>
           <div flex></div>
-          <div class="cat-name" horizontal center layout>Profile</div>
+          <div class="cat-name" horizontal center layout>
+            <div flex>Profile</div>
+            <core-icon class="category-icon" icon="arrow-forward"></core-icon>
+          </div>
         </div>
-        <core-icon class="category-icon" icon="arrow-forward"></core-icon>
       </div>
       
       <div class="category-item polymer-logo" hidden?="{{wide}}" vertical layout>

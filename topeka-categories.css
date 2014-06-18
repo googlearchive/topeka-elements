@@ -92,12 +92,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   font-size: 12px;
 }
 
-.category-icon {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-}
-
 .leaderboard, .profile {
   color: #fff;
   fill: #fff;
