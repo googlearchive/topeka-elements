@@ -20,7 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="stylesheet" href="topeka-categories.css">
   <link rel="stylesheet" href="topeka-category-themes.css">
 
-  <div class="categories-panel" flex hero-p cross-fade?="{{parentElement.selected !== 'category' && parentElement.lastSelected !== 'category'}}">
+  <div class="categories-panel" flex>
   
     <core-toolbar class="category-toolbar" slide-down?="{{parentElement.selected !== 'category' && parentElement.lastSelected !== 'category'}}">
     
@@ -30,13 +30,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
     </core-toolbar>
     
-    <core-selector class="category-list content {{ {wide: wide} | tokenList }}" selected="{{selected}}" hero-p tile-cascade?="{{parentElement.selected !== 'category' && parentElement.lastSelected !== 'category'}}">
+    <core-selector class="category-list content {{ {wide: wide} | tokenList }}" selected="{{selected}}" tile-cascade?="{{parentElement.selected !== 'category' && parentElement.lastSelected !== 'category'}}">
       
       <div class="category-item leaderboard" vertical layout>
         <div class="tile theme-bg-a" dummy fit layout vertical center center-justified>
-          <core-icon size="" icon="category-icons:leaderboard" class="category-tile-bg" cross-fade?="{{parentElement.selected === 'category' || parentElement.lastSelected === 'category'}}" flex></core-icon>
+          <core-icon size="" icon="category-icons:leaderboard" class="category-tile-bg" flex></core-icon>
         </div>
-        <div class="tile" flex vertical layout hero?="{{!category}}">
+        <div class="tile" flex vertical layout>
           <div flex></div>
           <div class="cat-name" horizontal center layout>
             <div flex>Leaderboard</div>
@@ -50,7 +50,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <template bind="{{allScores[cat.name] as scores}}">
           <div class="category-item {{cat.theme}}-theme {{ {completed: scores.length == cat.quizzes.length} | tokenList }}" vertical layout needZ?="{{category.name === cat.name}}">
             <div class="tile theme-bg-a" dummy fit layout vertical center center-justified hero-id="{{category.name === cat.name ? 'punch' : ''}}" hero?="{{category.name === cat.name}}">
-              <core-icon size="" class="category-tile-bg {{ {'theme-icon': scores.length === cat.quizzes.length} | tokenList }}" icon="{{scores.length === cat.quizzes.length ? 'check' : 'category-icons:' + cat.id}}" xcross-fade?="{{parentElement.selected === 'category' || parentElement.lastSelected === 'category'}}" cross-fade-delayed?="{{category.name === cat.name && parentElement.lastSelected === 'category'}}" flex></core-icon>
+              <core-icon size="" class="category-tile-bg {{ {'theme-icon': scores.length === cat.quizzes.length} | tokenList }}" icon="{{scores.length === cat.quizzes.length ? 'check' : 'category-icons:' + cat.id}}" cross-fade-delayed?="{{category.name === cat.name && parentElement.lastSelected === 'category'}}" flex></core-icon>
             </div>
             <div class="tile" flex vertical layout>
               <div flex></div>
@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
       <div class="category-item profile" vertical layout>
         <div class="tile theme-bg-a" dummy fit layout vertical center center-justified>
-          <core-icon size="" icon="category-icons:profile" class="category-tile-bg" cross-fade?="{{parentElement.selected === 'category' || parentElement.lastSelected === 'category'}}" flex></core-icon>
+          <core-icon size="" icon="category-icons:profile" class="category-tile-bg" flex></core-icon>
         </div>
         <div class="tile" flex vertical layout>
           <div flex></div>
