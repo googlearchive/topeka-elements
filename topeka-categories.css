@@ -75,14 +75,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   margin: 2px;
 }
 
-.completed > .tile {
-  opacity: 0.18;
+.category-tile-bg {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 48px;
 }
 
-.category-tile-bg {
-  /* must fit */
-  position: absolute !important;
-  margin-bottom: 48px;
+.completed .category-tile-bg {
+  width: 96px;
+  height: 96px;
 }
 
 .cat-name {

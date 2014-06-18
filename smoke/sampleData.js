@@ -3,6 +3,7 @@
   window.categories = [
     {
       name: 'Food & Drink',
+      id: 'food',
       theme: 'green',
       quizzes: [
         {
@@ -234,6 +235,7 @@
     },
     {
       name: 'General Knowledge',
+      id: 'knowledge',
       theme: 'yellow',
       quizzes: [
         {
@@ -264,6 +266,7 @@
     },
     {
       name: "History",
+      id: 'history',
       theme: "blue",
       quizzes: [
         {
@@ -281,6 +284,7 @@
     },
     {
       name: "Geography",
+      id: "geography",
       theme: "red",
       quizzes: [
         {
@@ -298,6 +302,7 @@
     },
     {
       name: "Science & Nature",
+      id: "science",
       theme: "green",
       quizzes: [
         {
@@ -314,7 +319,8 @@
       ]
     },
     {
-      name: "Movies",
+      name: "TV & Movies",
+      id: "tvmovies",
       theme: "purple",
       quizzes: [
         {
@@ -332,6 +338,7 @@
     },
     {
       name: "Music",
+      id: "music",
       theme: "blue",
       quizzes: [
         {
@@ -349,6 +356,7 @@
     },
     {
       name: "Entertainment",
+      id: "entertainment",
       theme: "red",
       quizzes: [
         {
@@ -366,6 +374,7 @@
     },
     {
       name: "Sports",
+      id: "sports",
       theme: "purple",
       quizzes: [
         {
