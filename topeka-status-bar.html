@@ -52,9 +52,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       font-size: 24px;
     }
     
+    paper-progress::shadow #activeProgress {
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
   </style>
   
-  <paper-progress value="{{scores.length}}" max="{{category.quizzes.length}}"></paper-progress>
+  <paper-progress value="{{scores.length + (scores.length === category.quizzes.length ? 0 : 1)}}" max="{{category.quizzes.length}}"></paper-progress>
   
   <div class="info {{ {wide: wide} | tokenList }}" flex horizontal center layout>
 
@@ -62,7 +66,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     <div class="cat-info" flex vertical layout>
       <div class="title font-medium">{{category.name}}</div>
-      <div class="progress">{{scores.length + (scores.length == category.quizzes.length ? 0 : 1)}} / {{category.quizzes.length}}</div>
+      <div class="progress">{{scores.length + (scores.length === category.quizzes.length ? 0 : 1)}} / {{category.quizzes.length}}</div>
     </div>
     
     <div class="pts">{{pts}}</div>
