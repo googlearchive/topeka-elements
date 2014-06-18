@@ -124,9 +124,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           for (var n in this.allScores) {
             pts += this.sumPts(this.allScores[n]);
           }
-          if (this.user.score != pts) {
-            this.resetScores();
-          }
+          this.user.score = pts;
         }
       } catch (e) {
         this.resetScores();
@@ -134,12 +132,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     computeScore: function() {
-      var pts = 0;
-      for (var n in this.allScores) {
-        pts += this.sumPts(this.allScores[n]);
+      if (this.user) {
+        var pts = 0;
+        for (var n in this.allScores) {
+          pts += this.sumPts(this.allScores[n]);
+        }
+        this.user.score = pts;
+        localStorage.setItem('topeka-scores', JSON.stringify(this.allScores));
       }
-      this.user.score = pts;
-      localStorage.setItem('topeka-scores', JSON.stringify(this.allScores));
     },
 
     resetScores: function() {
