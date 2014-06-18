@@ -30,7 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .card {
       background-color: white;
-      padding: 20px;
+      padding: 20px 16px;
       box-sizing: border-box;
     }
 
@@ -43,13 +43,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .header {
       font-size: 1.5em;
-      color: #00bbd3;
+      color: #00BCD4;
       font-weight: lighter;
+    }
+    .header.spaced {
+      margin-top: 16px;
+    }
+
+    .indent {
+      padding: 0 2px;
     }
 
     .topeka-avatar {
-      width: 70px;
-      height: 70px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       display: inline-block;
       overflow: hidden;
@@ -57,15 +64,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     .avatar-wrapper {
       display: inline-block;
-      padding: 5px;
+      padding: 2px;
+      margin: 6px 0;
     }
 
     .avatar-wrapper.core-selected {
-      background-color: #00bbd3;
+      background-color: #00BCD4;
+      border-radius: 50%;
+    }
+
+    .avatar-dummy {
+      width: 68px;
+      height: 0px;
     }
 
     #avatarList {
-      margin: 24px 0 8px 0;
+      margin: 16px 0 8px 0;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -73,7 +87,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     #check {
       width: 56px;
       height: 56px;
-      background-color: lightgray;
+      background-color: #f5f5f5;
       fill: black;
     }
 
@@ -106,16 +120,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="main" flex layout vertical hero-p?="{{parentElement.lastSelected !== 'splash'}}" cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
     <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical hero-id="profile" hero?="{{parentElement.selected === 'profile'}}" slide-up-offscreen?="{{parentElement.selected !== 'profile'}}">
       <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash'}}" on-keypress="{{ keypressAction }}">
-        <div class="header">{{userDefaults ? 'Your Profile' : 'Sign In'}}</div>
-        <paper-input label="First Name" id="first"></paper-input>
-        <paper-input label="Last Initial" id="last" maxlength="1"></paper-input>
-        <div class="header">Choose an Avatar</div>
-        <div id="avatarList" layout flex>
-          <core-selector selected="{{selectedAvatar}}">
+        <div class="indent" layout vertical>
+          <div class="header">{{userDefaults ? 'Your Profile' : 'Sign In'}}</div>
+          <paper-input label="First Name" id="first"></paper-input>
+          <paper-input label="Last Initial" id="last" maxlength="1"></paper-input>
+          <div class="header spaced">Choose an Avatar</div>
+        </div>
+        <div id="avatarList" flex>
+          <core-selector selected="{{selectedAvatar}}" layout horizontal justified wrap>
             <template repeat="{{i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}">
               <div class="avatar-wrapper">
-                <core-icon size="60" icon="avatars:avatar-{{i}}" class="topeka-avatar"></core-icon>
+                <core-icon size="64" icon="avatars:avatar-{{i}}" class="topeka-avatar"></core-icon>
               </div>
+            </template>
+            <template repeat="{{i in [1,2,3,4,5,6,7,8]}}">
+              <div class="avatar-dummy"></div>
             </template>
           </core-selector>
         </div>
