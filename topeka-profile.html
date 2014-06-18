@@ -131,8 +131,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <div class="bg" fit dummy cross-fade></div>
 
-  <div class="main" flex layout vertical hero-p?="{{parentElement.lastSelected !== 'splash'}}" cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
-    <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical hero-id="profile" hero?="{{parentElement.selected === 'profile'}}" slide-up-offscreen?="{{parentElement.selected !== 'profile'}}">
+  <div class="main" flex layout vertical xhero-p?="{{parentElement.lastSelected !== 'splash'}}" cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
+    <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical slide-up-offscreen>
       <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash'}}" on-keypress="{{ keypressAction }}">
         <div class="indent" layout vertical>
           <div class="header">{{userDefaults ? 'Your Profile' : 'Sign In'}}</div>

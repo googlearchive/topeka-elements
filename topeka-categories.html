@@ -32,7 +32,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     <core-selector class="category-list content {{ {wide: wide} | tokenList }}" selected="{{selected}}" hero-p tile-cascade?="{{parentElement.selected !== 'category' && parentElement.lastSelected !== 'category'}}">
       
-      <div class="category-item leaderboard" hero-id="leaderboard" hero?="{{category.name === 'leaderboard'}}" vertical layout>
+      <div class="category-item leaderboard" vertical layout>
         <div class="tile theme-bg-a" dummy fit layout vertical center center-justified>
           <core-icon size="" icon="category-icons:leaderboard" class="category-tile-bg" cross-fade?="{{parentElement.selected === 'category' || parentElement.lastSelected === 'category'}}" fit></core-icon>
         </div>
@@ -60,7 +60,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
       </template>
       
-      <div class="category-item profile" vertical layout hero-id="profile" hero?="{{!category || category.name === 'profile'}}">
+      <div class="category-item profile" vertical layout>
         <div class="tile theme-bg-a" dummy fit layout vertical center center-justified>
           <core-icon size="" icon="category-icons:profile" class="category-tile-bg" cross-fade?="{{parentElement.selected === 'category' || parentElement.lastSelected === 'category'}}" fit></core-icon>
         </div>

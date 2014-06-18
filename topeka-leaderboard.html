@@ -156,7 +156,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="bg" fit dummy cross-fade></div>
 
   <div class="main" flex center layout vertical hero-p>
-    <div flex hero-id="leaderboard" hero?="{{parentElement.selected === 'leaderboard'}}" slide-up-offscreen?="{{parentElement.selected !== 'leaderboard'}}" class="card {{ {wide: wide, 'multi-column': columns>1, tvmode: tvmode} | tokenList }}" relative>
+    <div flex slide-up-offscreen class="card {{ {wide: wide, 'multi-column': columns>1, tvmode: tvmode} | tokenList }}" relative>
       <div vertical layout fit cross-fade-delayed>
         <core-toolbar>
           <div class="title">Leaderboard</div>
