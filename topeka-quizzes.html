@@ -82,8 +82,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     created: function() {
       this.scores = [];
     },
-    
+
+    next: function() {
+      this.index++;
+      this.answered = false;
+      this.icon = 'check';
+      if (this.quizView) {
+       this.quizView.reset();
+      }
+    },
+
     update: function() {
+      console.log('update');
       if (this.scores && this.category) {
         this.index = this.scores.length;
         this.indexChanged();
@@ -120,12 +130,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       this.async(function() {
         this.fire('quiz-done', {score: s});
-        this.index++;
-        this.answered = false;
-        this.icon = 'check';
-        if (this.quizView) {
-        	this.quizView.reset();
-        }
       }, null, 1000);
     },
     

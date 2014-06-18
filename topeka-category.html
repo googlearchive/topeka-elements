@@ -31,7 +31,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
       <topeka-category-front-page name="front" category="{{category}}" wide="{{wide}}" on-previous="{{mainAction}}" on-next="{{showQuizzes}}"></topeka-category-front-page>
     
-      <topeka-quizzes name="quizzes" selectedPage="{{selected}}" scores="{{scores}}" category="{{category}}" avatar="{{user.avatar}}" wide="{{wide}}" on-quiz-done="{{quizDone}}"></topeka-quizzes>
+      <topeka-quizzes name="quizzes" id="quizzes" selectedPage="{{selected}}" scores="{{scores}}" category="{{category}}" avatar="{{user.avatar}}" wide="{{wide}}" on-quiz-done="{{quizDone}}"></topeka-quizzes>
       
       <topeka-quiz-score name="quizScore" selectedPage="{{selected}}" scores="{{scores}}" category="{{category}}" avatar="{{user.avatar}}" wide="{{wide}}" quizScore="{{quizScore}}"></topeka-quiz-score>
       
@@ -84,6 +84,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     transitionEnd: function() {
       if (this.selected === 'quizScore') {
+
+        // Delay switching questions so we don't see the new question
+        // before the transition to the score card, and so we're not
+        // switching questions when a transition is running.
+        this.$.quizzes.next();
+
         this.async(function() {
           if (this.scores.length === this.category.quizzes.length) {
             this.selected = 'score';
