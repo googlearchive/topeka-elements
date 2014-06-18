@@ -153,7 +153,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </core-selector>
         </div>
         <div horizontal center layout>
-          <paper-button on-tap="{{handleLogout}}" label="Sign Out" hidden?="{{!user || !user.exists}}"></paper-button>
+          <paper-button on-tap="{{handleLogout}}" label="Sign Out" hidden?="{{!user}}"></paper-button>
           <div flex></div>
           <paper-fab id="check" icon="check" showing?="{{$.first.inputValue.length && $.last.inputValue.length && selectedAvatar !== undefined}}" on-tap="{{handleLogin}}"></paper-fab>
         </div>
@@ -212,8 +212,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       this.user = {
         name: this.$.first.value + ' ' + this.$.last.value.substring(0,1),
         avatar: this.selectedAvatar + 1,
-        score: this.score || 0,
-        exists: true
+        score: this.score || 0
       };
     },
 

@@ -18,7 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../core-animated-pages/transitions/tile-cascade.html">
 <link rel="import" href="../core-media-query/core-media-query.html">
 
-<polymer-element name="topeka-app" attributes="user categories statusKnown" vertical layout>
+<polymer-element name="topeka-app" attributes="user categories connected" vertical layout>
 <template>
 
   <link rel="stylesheet" href="topeka-app.css">
@@ -57,7 +57,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     minSplashTime: 1000,
     
     observe: {
-      'user statusKnown': 'startup'
+      'user connected': 'startup'
     },
     
     ready: function() {
@@ -159,13 +159,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     
     startup: function() {
-      var elapsed = Date.now() - this.readyTime;
-      var t = this.minSplashTime - elapsed;
-      this.async('completeStartup', null, t > 0 ? t : 0);
+      if (this.connected) {
+        var elapsed = Date.now() - this.readyTime;
+        var t = this.minSplashTime - elapsed;
+        this.async('completeStartup', null, t > 0 ? t : 0);
+      }
     },
     
     completeStartup: function() {
-      if (this.user && this.user.exists) {
+      if (this.user) {
         this.loadScores();
         this.selected = 'categories';
       } else {

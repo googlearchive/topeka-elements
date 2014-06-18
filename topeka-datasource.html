@@ -11,17 +11,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../firebase-element/firebase-element.html">
 <link rel="import" href="../firebase-element/firebase-login.html">
 
-<polymer-element name="topeka-datasource" attributes="user categories url statusKnown" noscript hidden>
+<polymer-element name="topeka-datasource" noscript hidden>
 <template>
   
   <firebase-login id="fbLogin" provider="anonymous" params='{"rememberMe": true}' location="https://polymer-topeka.firebaseio.com" user="{{fbUser}}" statusKnown="{{statusKnown}}"></firebase-login>
-  <firebase-element id="fbUser" location="{{!offline && fbUser ? 'https://polymer-topeka.firebaseio.com/users/' + fbUser.uid : null}}" priority="{{user.score}}" data="{{user}}"></firebase-element>
+  <firebase-element id="fbUser" location="{{!offline && fbUser ? 'https://polymer-topeka.firebaseio.com/users/' + fbUser.uid : null}}" priority="{{user.score}}" data="{{user}}" dataReady="{{connected}}"></firebase-element>
   <core-ajax auto handleAs="json" url="{{url}}" response="{{categories}}"></core-ajax>
 
 </template>
 <script>
 
   Polymer('topeka-datasource', {
+
+    publish: {
+      user: null,
+      categories: null,
+      url: null,
+      connected: false
+    },
 
     ready: function() {
       this.test = window.location.search.indexOf('test') >= 0;
@@ -30,7 +37,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.user = {
           name: "Test U",
           avatar: 1,
-          exists: true,
           score: 0
         };
       }
