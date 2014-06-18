@@ -15,9 +15,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <template>
 
   <style>
+    :host {
+      padding: 40px 0px;
+    }
+    
+    :host-context(.wide) {
+      padding: 40px 0px 48px;
+    }
+
+    :host paper-item {
+      padding: 3px 28px;
+    }
+    
+    :host-context(.wide) paper-item {
+      padding: 3px 36px;
+    }
+
     paper-item {
       margin: 3px 0;
-      padding: 3px 12px;
       -webkit-transition: background-color 1s;
       transition: background-color 1s;
     }
@@ -29,6 +44,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     paper-item::shadow #ripple {
       color: #7cd9e6;
     }
+
+    .letter {
+      padding-right: 24px;
+    }
     
 
   </style>
@@ -37,7 +56,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <template repeat="{{item, i in quiz.options}}">
 
-      <paper-item label="{{i | computeLetter}}. {{item}}"></paper-item>
+      <paper-item><span class="letter">{{i | computeLetter}}.</span> {{item}}</paper-item>
 
     </template>
 
