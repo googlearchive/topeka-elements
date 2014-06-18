@@ -49,7 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div flex></div>
   
   <div class="bottom-bar theme-bg {{ {wide: wide} | tokenList }}" horizontal center layout hero-id="punch-bottom" hero>
-    <div>{{category.name}}</div>
+    <div cross-fade-delayed?="{{parentElement.selected === 'front'}}">{{category.name}}</div>
     <paper-fab icon="av:play-arrow" on-tap="{{nextAction}}" scale-up></paper-fab>
   </div>
 
