@@ -60,6 +60,28 @@
 
 </x-meta>
 
+
+<x-meta id="topeka-demo" label="Topeka Demo" group="Topeka" hideSubtree>
+
+  <template>
+    <div style="height: 100%; width: 100%; overflow: hidden;">
+      <topeka-app fit id="app" connected="{{$.datasource.connected}}"></topeka-app>
+      <topeka-datasource id="datasource" url="categories.json"></topeka-datasource>
+    </div>
+  </template>
+
+  <template id="imports">
+    <link rel="import" href="theme.html">
+    <link rel="import" href="topeka-datasource.html">
+    <link rel="import" href="topeka-resources.html">
+    <link rel="import" href="topeka-app.html">
+  </template>
+
+  <property name="user" kind="json"></property>
+  <property name="categories" kind="json"></property>
+
+</x-meta>
+
 <x-meta id="topeka-categories" label="Topeka Categories" group="Topeka" hideSubtree>
 
   <template>
@@ -91,7 +113,7 @@
 <x-meta id="topeka-datasource" label="Topeka Datasource" group="Topeka" hideSubtree>
 
   <template>
-    <topeka-datasource url="components/topeka-elements/categories.json"></topeka-datasource>
+    <topeka-datasource url="categories.json"></topeka-datasource>
   </template>
 
   <template id="imports">
