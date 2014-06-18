@@ -49,6 +49,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.fire('quiz-answered');
       },
       
+      reset: function() {
+        this.value = null;
+      },
+      
       keyPress: function(e) {
         // enter key
         if (e.keyCode === 13) {

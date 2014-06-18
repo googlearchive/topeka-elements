@@ -52,12 +52,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <div class="picker-value font-light">{{value}}</div>
   
-  <paper-slider min="{{min || quiz.min}}" max="{{max || quiz.max}}" step="{{quiz.step}}" immediateValue="{{immediateValue}}"></paper-slider>
+  <paper-slider id="slider" min="{{min || quiz.min}}" max="{{max || quiz.max}}" step="{{quiz.step || 1}}" immediateValue="{{immediateValue}}"></paper-slider>
 
 </template>
 <script>
 
   Polymer('topeka-quiz-picker', {
+    
+    quizChanged: function() {
+      this.value = this.$.slider.value = this.$.slider.secondaryProgress = this.quiz.min || 0;
+    },
     
     immediateValueChanged: function() {
       this.value = this.immediateValue;

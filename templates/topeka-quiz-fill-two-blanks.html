@@ -29,6 +29,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   Polymer('topeka-quiz-fill-two-blanks', {
     
+    reset: function() {
+      this.super();
+      this.value2 = null;
+    },
+    
     isCorrect: function() {
       var a = this.quiz.answer;
       if (a && a.length === 2) {

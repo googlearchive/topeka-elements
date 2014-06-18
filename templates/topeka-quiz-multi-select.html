@@ -50,7 +50,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <script>
 
   Polymer('topeka-quiz-multi-select', {
-
+    
+    reset: function() {
+      this.super();
+      this.selected = null;
+    },
+    
     isCorrect: function() {
       var v = this.selected && this.selected.sort();
       return v == this.quiz.answer;

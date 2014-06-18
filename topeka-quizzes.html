@@ -8,13 +8,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="topeka-status-bar.html">
-<link rel="import" href="topeka-quiz-view.html">
+<link rel="import" href="templates/topeka-quiz-fill-blank.html">
+<link rel="import" href="templates/topeka-quiz-fill-two-blanks.html">
+<link rel="import" href="templates/topeka-quiz-single-select.html">
+<link rel="import" href="templates/topeka-quiz-single-select-item.html">
+<link rel="import" href="templates/topeka-quiz-multi-select.html">
+<link rel="import" href="templates/topeka-quiz-picker.html">
+<link rel="import" href="templates/topeka-quiz-alpha-picker.html">
+<link rel="import" href="templates/topeka-quiz-true-false.html">
+<link rel="import" href="templates/topeka-quiz-four-quarter.html">
+<link rel="import" href="templates/topeka-quiz-toggle-translate.html">
 <link rel="import" href="../core-toolbar/core-toolbar.html">
 <link rel="import" href="../core-selector/core-selector.html">
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-fab/paper-fab.html">
 
-<polymer-element name="topeka-quizzes" attributes="selectedPage scores category avatar wide" vertical layout>
+<polymer-element name="topeka-quizzes" attributes="scores category avatar wide" vertical layout>
 <template>
 
   <link rel="stylesheet" href="topeka-quizzes.css">
@@ -31,17 +40,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <div class="quizzes-content" hidden?="{{!category}}" flex hero-id="quizzes-content" hero>
       
-        <core-selector id="quizViews" notap selected="{{selected}}" selectedModel="{{quiz}}" selectedItem="{{quizView}}" cross-fade-delayed>
+        <core-selector id="quizViews" notap selected="{{quiz.type}}" cross-fade-delayed on-quiz-answered="{{quizAnswered}}" on-quiz-next="{{quizDone}}">
         
-          <template repeat="{{category.quizzes}}">
-            <topeka-quiz-view quiz="{{}}" on-quiz-answered="{{quizAnswered}}" on-quiz-next="{{quizDone}}"></topeka-quiz-view>
-          </template>
+          <topeka-quiz-alpha-picker name="alpha-picker"></topeka-quiz-alpha-picker>
+          <topeka-quiz-fill-blank name="fill-blank"></topeka-quiz-fill-blank>
+          <topeka-quiz-fill-two-blanks name="fill-two-blanks"></topeka-quiz-fill-two-blanks>
+          <topeka-quiz-four-quarter name="four-quarter"></topeka-quiz-four-quarter>
+          <topeka-quiz-multi-select name="multi-select"></topeka-quiz-multi-select>
+          <topeka-quiz-picker name="picker"></topeka-quiz-picker>
+          <topeka-quiz-single-select-item name="single-select-item"></topeka-quiz-single-select-item>
+          <topeka-quiz-single-select name="single-select"></topeka-quiz-single-select>
+          <topeka-quiz-toggle-translate name="toggle-translate"></topeka-quiz-toggle-translate>
+          <topeka-quiz-true-false name="true-false"></topeka-quiz-true-false>
           
         </core-selector>
 
       </div>
       
-      <paper-fab class="bottom check-button {{ {correct: scores[selected] > 0, incorrect: scores[selected] === 0} | tokenList }}" icon="{{icon}}" on-tap="{{quizDone}}"></paper-fab>
+      <paper-fab class="check-button {{ {correct: scores[index] > 0, incorrect: scores[index] === 0} | tokenList }}" icon="{{icon}}" on-tap="{{quizDone}}"></paper-fab>
       
     </div>
     
@@ -69,7 +85,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     update: function() {
       if (this.scores && this.category) {
-        this.selected = this.scores.length;
+        this.index = this.scores.length;
+        this.indexChanged();
+      }
+    },
+    
+    indexChanged: function() {
+      if (this.category.quizzes) {
+        this.quiz = this.category.quizzes[this.index];
+      }
+    },
+    
+    quizChanged: function() {
+      if (this.quizView) {
+        this.quizView.reset();
+      }
+      if (this.quiz) {
+        this.quizView = this.$.quizViews.querySelector(
+            '[name="' + this.quiz.type + '"]');
+        if (this.quizView) {
+          this.quizView.quiz = this.quiz;
+        }
       }
     },
     
@@ -80,13 +116,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       } else {
         this.icon = 'close';
       }
-      this.scores[this.selected] = s;
+      this.scores[this.index] = s;
 
       this.async(function() {
         this.fire('quiz-done', {score: s});
-        this.selected++;
+        this.index++;
         this.answered = false;
         this.icon = 'check';
+        if (this.quizView) {
+        	this.quizView.reset();
+        }
       }, null, 1000);
     },
     
