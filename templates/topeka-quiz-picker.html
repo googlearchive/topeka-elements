@@ -13,46 +13,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <polymer-element name="topeka-quiz-picker" extends="topeka-quiz-base">
 <template>
 
-  <style>
-  
-    :host {
-       padding: 40px;
-    }
-    
-    :host-context(.wide) {
-      width: 304px;
-      margin: 0 auto;
-    }
-    
-    .picker-value {
-      padding-left: 16px;
-      font-size: 114px;
-      color: #00bad2
-    }
-  
-    paper-slider {
-      width: 100%;
-    }
-    
-    paper-slider::shadow #sliderKnobInner,
-    paper-slider::shadow #sliderKnobInner::before,
-    paper-slider::shadow #sliderBar::shadow #activeProgress {
-      background-color: #00bad2;
-    }
-    
-    paper-slider::shadow #sliderBar::shadow #progressContainer {
-      background-color: #b0bec5;
-    }
-    
-    paper-slider::shadow #sliderKnob.ring > #sliderKnobInner {
-      border: 2px solid #b0bec5;
-    }
-    
-  </style>
+  <link rel="stylesheet" href="topeka-quiz-picker.css">
   
   <div class="picker-value font-light">{{value}}</div>
   
-  <paper-slider id="slider" min="{{min || quiz.min}}" max="{{max || quiz.max}}" step="{{quiz.step || 1}}" immediateValue="{{immediateValue}}"></paper-slider>
+  <paper-slider id="slider" min="{{quiz.min}}" max="{{quiz.max}}" step="{{quiz.step || 1}}" immediateValue="{{value}}"></paper-slider>
 
 </template>
 <script>
@@ -61,10 +26,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     quizChanged: function() {
       this.value = this.$.slider.value = this.$.slider.secondaryProgress = this.quiz.min || 0;
-    },
-    
-    immediateValueChanged: function() {
-      this.value = this.immediateValue;
     }
     
   });
