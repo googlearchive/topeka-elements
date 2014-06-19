@@ -134,8 +134,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <div class="bg" fit dummy cross-fade></div>
 
   <div class="main" flex layout vertical cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
-    <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical slide-up-offscreen>
-      <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash'}}" on-keypress="{{ keypressAction }}">
+    <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical slide-up-offscreen?="{{parentElement.selected === 'profile'}}" cross-fade="{{!wide && parentElement.selected !== 'profile'}}">
+      <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash' && wide}}" on-keypress="{{ keypressAction }}">
         <div class="indent" layout vertical>
           <div class="header">{{userDefaults ? 'Your Profile' : 'Sign In'}}</div>
           <paper-input label="First Name" id="first"></paper-input>
