@@ -57,10 +57,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     minSplashTime: 1000,
     
     observe: {
-      'user connected': 'startup'
+      'user connected offline': 'startup'
     },
     
     ready: function() {
+      this.test = window.location.search.indexOf('test') >= 0;
+      this.offline = this.test || window.location.search.indexOf('offline') >= 0;
+
       this.readyTime = Date.now();
 
       var dummyState = {app: 'topeka'};
@@ -159,7 +162,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     
     startup: function() {
-      if (this.connected) {
+      if (this.connected || this.offline) {
         var elapsed = Date.now() - this.readyTime;
         var t = this.minSplashTime - elapsed;
         this.async('completeStartup', null, t > 0 ? t : 0);
