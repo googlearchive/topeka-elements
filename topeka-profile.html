@@ -131,7 +131,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <div class="bg" fit dummy cross-fade></div>
 
-  <div class="main" flex layout vertical xhero-p?="{{parentElement.lastSelected !== 'splash'}}" cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
+  <div class="main" flex layout vertical cross-fade-delayed?="{{parentElement.lastSelected === 'splash'}}">
     <div class="card {{ {wide: wide} | tokenList }}" flex layout vertical slide-up-offscreen>
       <div layout vertical flex cross-fade-delayed?="{{parentElement.lastSelected !== 'splash'}}" on-keypress="{{ keypressAction }}">
         <div class="indent" layout vertical>
