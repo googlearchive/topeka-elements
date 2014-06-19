@@ -18,11 +18,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
     :host-context(.wide) {
       position: relative !important;
-      min-height: 424px;
+      height: 424px;
+      max-height: calc(100vh - 328px);
     }
 
     :host {
       display: block;
+      box-sizing: border-box;
       position: absolute !important;
       top: 0;
       right: 0;
