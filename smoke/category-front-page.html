@@ -19,6 +19,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <script src="sampleData.js"></script>
   
+  <link rel="import" href="../theme.html">
   <link rel="stylesheet" href="../topeka-category-themes.css" shim-shadowdom>
   
   <link rel="import" href="../theme.html">
@@ -29,14 +30,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <style>
   
+    html, body {
+      height: 100%;
+    }
+
     body {
+      margin: 0;
+      background-color: #ffff8d;
       font-family: "RobotoDraft", sans-serif;
+    }    
+  
+    topeka-category-front-page {
+      max-width: 600px;
+      margin: 0 auto;
     }
   
   </style>
   
 </head>
 <body unresolved class="yellow-theme">
+
+  <core-media-query query="min-width: 900px"></core-media-query>
 
   <topeka-category-front-page fit></topeka-category-front-page>
   
@@ -45,6 +59,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     addEventListener('polymer-ready', function() {
   
       var c = document.querySelector('topeka-category-front-page');
+      var m = document.querySelector('core-media-query');
+      
+      m.addEventListener('core-media-change', function() {
+        c.wide = m.queryMatches;
+      });
+      
       c.category = window.categories[0];
       
     });
