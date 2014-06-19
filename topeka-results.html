@@ -1,0 +1,80 @@
+<!--
+Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="topeka-status-bar.html">
+<link rel="import" href="../core-selector/core-selector.html">
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-toolbar/core-toolbar.html">
+<link rel="import" href="../paper-fab/paper-fab.html">
+
+<polymer-element name="topeka-results" attributes="scores category avatar wide" vertical layout>
+<template>
+
+  <link rel="stylesheet" href="topeka-results.css">
+
+  <div class="results-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-up>
+  
+    <div class="card" flex?="{{!wide}}" vertical layout?="{{!wide}}" hero-p>
+    
+      <core-toolbar class="theme-bg" hero-id="punch-bottom" hero>
+      
+        <div class="title font-light" cross-fade-delayed>Scorecard</div>
+        
+      </core-toolbar>
+
+      <div class="results-content" flex hero-id="results-content" hero>
+      
+        <core-selector selected="{{selected}}">
+  
+          <template repeat="{{score, index in scores}}">
+          
+            <div class="result-item" horizontal layout>
+            
+              <core-icon icon="{{score ? 'done' : 'clear'}}" class="{{ {fail: !score} | tokenList }}"></core-icon>
+              
+              <div flex vertical layout>
+              
+                <div>{{category.quizzes[index].question}}</div>
+                
+                <div class="answer" hidden?="{{category.quizzes[index].options}}">{{category.quizzes[index].answer}}</div>
+                <template repeat="{{i in category.quizzes[index].answer}}">
+                  <div class="answer">{{category.quizzes[index].options[i]}}</div>
+                </template>
+                
+              </div>
+              
+            </div>
+          
+          </template>
+        
+        </core-selector>
+
+      </div>
+      
+      <paper-fab icon="check" on-tap="{{nextAction}}"></paper-fab>
+      
+    </div>
+    
+  </div>
+
+  <topeka-status-bar class="{{ {wide: wide} | tokenList }}" avatar="{{avatar}}" scores="{{scores}}" category="{{category}}" wide="{{wide}}" slide-up></topeka-status-bar>
+    
+</template>
+<script>
+
+  Polymer('topeka-results', {
+    
+    nextAction: function() {
+      this.fire('next');
+    }
+    
+  });
+
+</script>
+</polymer-element>
