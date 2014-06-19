@@ -75,12 +75,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     },
     
-    scoresChanged: function() {
-      if (this.scores) {
-        this.selected = this.scores.length ? this.selected : 'front';
-      }
-    },
-    
     selectedChanged: function() {
       if (this.selected === 'score') {
         this.fire('score-update');

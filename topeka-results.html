@@ -18,7 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="stylesheet" href="topeka-results.css">
 
-  <div class="results-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-up?="{{parentElement.selected === 'results'}}">
+  <div class="results-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-down?="{{parentElement.selected !== 'results'}}" slide-up?="{{parentElement.selected === 'results'}}">
   
     <div class="card" flex?="{{!wide}}" vertical layout?="{{!wide}}">
     
