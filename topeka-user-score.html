@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       this.correct = 0;
       if (this.scores) {
         for (var i = 0; i < this.scores.length; i++) {
-          var s = this.scores[i];
+          var s = this.scores[i] || 0;
           this.pts += s;
           if (s) {
             this.correct++;

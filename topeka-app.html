@@ -156,7 +156,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     sumPts: function(s) {
       var pts = 0;
       for (var i = 0; i < s.length; i++) {
-        pts += s[i];
+        pts += (s[i] || 0);
       }
       return pts;
     },
