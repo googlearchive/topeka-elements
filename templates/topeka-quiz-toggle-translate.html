@@ -16,9 +16,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <template>
 
   <style>
+    :host {
+      padding: 40px 0px;
+    }
+    
+    :host-context(.wide) {
+      padding: 40px 0px 48px;
+    }
+
+    :host paper-item {
+      padding: 3px 28px;
+    }
+    
+    :host-context(.wide) paper-item {
+      padding: 3px 36px;
+    }
+
     paper-item {
       margin: 3px 0;
-      padding: 3px 12px;
       -webkit-transition: background-color 1s;
       transition: background-color 1s;
     }
@@ -43,15 +58,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       background-color: #00bad2;
     }
 
+    .icon {
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      margin: 0 24px;
+    }
+
+    .option-left {
+      text-align: right;
+    }
+
   </style>
 
   <div id="choices">
 
     <template repeat="{{item in quiz.options}}">
 
-      <paper-item>
-        <span flex>{{item[item.checked ? 1 : 0]}}</span>
-        <paper-toggle-button checked="{{item.checked}}" on-tap="{{toggleTap}}"></paper-toggle-button>
+      <paper-item justified horizontal layout>
+        <span class="option-left" flex>{{item[0]}}</span>
+        <core-icon class="icon" icon="unfold-more"></core-icon>
+        <span class="option-right" flex>{{item[1]}}</span>
       </paper-item>
 
     </template>
