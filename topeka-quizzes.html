@@ -63,7 +63,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
   </div>
 
-  <topeka-status-bar class="{{ {wide: wide} | tokenList }}" avatar="{{avatar}}" scores="{{scores}}" category="{{category}}" wide="{{wide}}" slide-up></topeka-status-bar>
+  <topeka-status-bar class="{{ {wide: wide} | tokenList }}" avatar="{{avatar}}" scores="{{scores}}" category="{{category}}" wide="{{wide}}" slide-up?="{{parentElement.selected === 'quizzes'}}"></topeka-status-bar>
   
 </template>
 <script>
