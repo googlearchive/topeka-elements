@@ -28,17 +28,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="stylesheet" href="topeka-quizzes.css">
 
-  <div class="quizzes-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-up>
+  <div class="quizzes-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-up?="{{parentElement.selected !== 'empty'}}" slide-down?="{{parentElement.selected === 'empty'}}">
   
     <div class="card {{ {answered: answered} | tokenList }}" flex?="{{!wide}}" vertical layout?="{{!wide}}" hero-p>
     
-      <core-toolbar class="theme-bg" hero-id="punch-bottom" hero>
+      <core-toolbar class="theme-bg" hero-id="punch-bottom" hero?="{{parentElement.selected !== 'empty'}}">
       
         <div class="question" cross-fade-delayed>{{quiz.question}}</div>
         
       </core-toolbar>
 
-      <div class="quizzes-content" hidden?="{{!category}}" flex hero-id="quizzes-content" hero>
+      <div class="quizzes-content" hidden?="{{!category}}" flex hero-id="quizzes-content" hero?="{{parentElement.selected !== 'empty'}}">
       
         <core-selector id="quizViews" notap selected="{{quiz.type}}" cross-fade-delayed on-quiz-answered="{{quizAnswered}}" on-quiz-next="{{quizDone}}">
         
