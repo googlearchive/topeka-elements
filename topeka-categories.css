@@ -76,12 +76,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .category-tile-bg {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 48px;
+  position: absolute !important;
 }
 
-.completed .category-tile-bg {
+.category-bg-wrapper {
+  width: 80%;
+  height: 80%;
+}
+
+.completed .category-bg-wrapper {
   width: 96px;
   height: 96px;
 }
