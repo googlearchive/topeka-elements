@@ -20,7 +20,7 @@
     "core-icons": "Polymer/core-icons#master",
     "core-scroll-header-panel": "Polymer/core-scroll-header-panel#master",
     "core-style": "Polymer/core-style#master",
-    "font-roboto2": "Polymer/font-roboto2#master",
+    "font-roboto": "Polymer/font-roboto#master",
     "paper-checkbox": "Polymer/paper-checkbox#master",
     "paper-item": "Polymer/paper-item#master",
     "paper-radio-button": "Polymer/paper-radio-button#master",
