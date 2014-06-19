@@ -38,7 +38,7 @@
             'Translate site text to emoji in chrome',
             'Replace youtube videos with animated gifs'
           ],
-          answer: '0,1,2'
+          answer: [0,1,2]
         },
         {
           type: 'single-select',
@@ -49,7 +49,7 @@
             'Gmail',
             'Chrome'
           ],
-          answer: 2
+          answer: [2]
         },
         {
           type: 'fill-blank', 
@@ -83,7 +83,7 @@
             'Translate site text to emoji in chrome',
             'Replace youtube videos with animated gifs'
           ],
-          answer: '0,1,2'
+          answer: [0,1,2]
         },
         {
           type: 'single-select',
@@ -94,7 +94,7 @@
             'Gmail',
             'Chrome'
           ],
-          answer: 2
+          answer: [2]
         },
         {
           type: 'fill-blank', 
@@ -128,7 +128,7 @@
             'Translate site text to emoji in chrome',
             'Replace youtube videos with animated gifs'
           ],
-          answer: '0,1,2'
+          answer: [0,1,2]
         },
         {
           type: 'single-select',
@@ -139,7 +139,7 @@
             'Gmail',
             'Chrome'
           ],
-          answer: 2
+          answer: [2]
         },
         {
           type: 'fill-blank', 
@@ -173,7 +173,7 @@
             'Translate site text to emoji in chrome',
             'Replace youtube videos with animated gifs'
           ],
-          answer: '0,1,2'
+          answer: [0,1,2]
         },
         {
           type: 'single-select',
@@ -184,7 +184,7 @@
             'Gmail',
             'Chrome'
           ],
-          answer: 2
+          answer: [2]
         },
         {
           type: 'fill-blank', 
@@ -218,7 +218,7 @@
             'Translate site text to emoji in chrome',
             'Replace youtube videos with animated gifs'
           ],
-          answer: '0,1,2'
+          answer: [0,1,2]
         },
         {
           type: 'single-select',
@@ -229,7 +229,7 @@
             'Gmail',
             'Chrome'
           ],
-          answer: 2
+          answer: [2]
         }
       ]
     },
@@ -247,7 +247,7 @@
             '2008',
             '2014'
           ],
-          answer: 2
+          answer: [2]
         },
         {
           type: 'multi-select',
@@ -260,7 +260,7 @@
             'Distribute',
             'Decode'
           ],
-          answer: '1,3,4'
+          answer: [1,3,4]
         }
       ]
     },
@@ -278,7 +278,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     },
@@ -296,7 +296,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     },
@@ -314,7 +314,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     },
@@ -332,7 +332,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     },
@@ -350,7 +350,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     },
@@ -368,7 +368,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     },
@@ -386,7 +386,7 @@
             "Classroom",
             "Everyone"
           ],
-          answer: 3
+          answer: [3]
         }
       ]
     }

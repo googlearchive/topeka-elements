@@ -58,7 +58,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     isCorrect: function() {
       var v = this.selected && this.selected.sort();
-      return v == this.quiz.answer;
+      return v && v.toString() == this.quiz.answer.toString();
     }
 
   });
