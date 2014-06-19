@@ -13,7 +13,7 @@
                     "Gorgonzola",
                     "Parmesan"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "true-false",
@@ -32,7 +32,7 @@
                     "Yeast",
                     "Salt"
                 ],
-                "answer": "1,3,5"
+                "answer": [1,3,5]
             },
             {
                 "type": "four-quarter",
@@ -43,7 +43,7 @@
                     "Potato",
                     "Wheat"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "single-select-item",
@@ -54,7 +54,7 @@
                     "Cauliflower",
                     "Kale"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "fill-blank",
@@ -70,7 +70,7 @@
                     "New York",
                     "San Francisco"
                 ],
-                "answer": 3
+                "answer": [3]
             },
             {
                 "type": "picker",
@@ -93,7 +93,7 @@
                     "Flock",
                     "Pod"
                 ],
-                "answer": 1
+                "answer": [1]
             }
         ]
     },
@@ -116,7 +116,7 @@
                     "Empire State Building",
                     "The New York Times Building"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "multi-select",
@@ -130,7 +130,7 @@
                     "John Felton",
                     "Aramis"
                 ],
-                "answer": "2,4,6"
+                "answer": [2,4,6]
             },
             {
                 "type": "toggle-translate",
@@ -153,7 +153,7 @@
                         "Coyote"
                     ]
                 ],
-                "answer": "2"
+                "answer": [2]
             },
             {
                 "type": "single-select-item",
@@ -164,7 +164,7 @@
                     "A Clockwork Orange",
                     "Play Misty for me"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "picker",
@@ -192,7 +192,7 @@
                     "The Bermuda Triangle",
                     "Black Sea"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "single-select",
@@ -203,7 +203,7 @@
                     "Cashew",
                     "Pistachio"
                 ],
-                "answer": 1
+                "answer": [1]
             }
         ]
     },
@@ -228,7 +228,7 @@
                     "Lyndon B. Johnson",
                     "Ronald Reagan"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "true-false",
@@ -257,7 +257,7 @@
                     "Barret",
                     "Barrow"
                 ],
-                "answer": "1,5"
+                "answer": [1,5]
             },
             {
                 "type": "four-quarter",
@@ -268,7 +268,7 @@
                     "General",
                     "Captain"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "picker",
@@ -287,7 +287,7 @@
                     "Réunion",
                     "New Caledonia"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "multi-select",
@@ -301,7 +301,7 @@
                     "Utah",
                     "Texas"
                 ],
-                "answer": "1,3,6"
+                "answer": [1,3,6]
             }
         ]
     },
@@ -341,7 +341,7 @@
                         "Florida"
                     ]
                 ],
-                "answer": "1,3,4"
+                "answer": [1,3,4]
             },
             {
                 "type": "true-false",
@@ -368,7 +368,7 @@
                     "Japan",
                     "China"
                 ],
-                "answer": "0,4,5"
+                "answer": [0,4,5]
             },
             {
                 "type": "fill-blank",
@@ -384,7 +384,7 @@
                     "Seoul",
                     "Sydney"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "fill-blank",
@@ -403,7 +403,7 @@
                     "Italy",
                     "Czech Republic"
                 ],
-                "answer": "2,5"
+                "answer": [2,5]
             },
             {
                 "type": "single-select",
@@ -414,7 +414,7 @@
                     "Antarctica",
                     "Argentina"
                 ],
-                "answer": 2
+                "answer": [2]
             }
         ]
     },
@@ -440,7 +440,7 @@
                     "Falcon",
                     "Sparrow"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "four-quarter",
@@ -451,7 +451,7 @@
                     "Cheetah",
                     "Siamese"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "toggle-translate",
@@ -494,7 +494,7 @@
                         "Sn"
                     ]
                 ],
-                "answer": "2,4"
+                "answer": [2,4]
             },
             {
                 "type": "true-false",
@@ -530,7 +530,7 @@
                     "Worm",
                     "Bear"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "fill-two-blanks",
@@ -558,7 +558,7 @@
                     "Clint Eastwood",
                     "Toby Stephens"
                 ],
-                "answer": "0,2,3,5"
+                "answer": [0,2,3,5]
             },
             {
                 "type": "fill-blank",
@@ -574,7 +574,7 @@
                     "Watchmen",
                     "Forbidden Planet"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "single-select",
@@ -585,7 +585,7 @@
                     "Mearth",
                     "Magnus"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "picker",
@@ -621,7 +621,7 @@
                     "Jaws",
                     "The Color Purple"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "fill-blank",
@@ -644,7 +644,7 @@
                     "George",
                     "Ringo"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "multi-select",
@@ -657,7 +657,7 @@
                     "Dizzy Gillespie",
                     "Freddie Hubbard"
                 ],
-                "answer": "0,1,2,4,5"
+                "answer": [0,1,2,4,5]
             },
             {
                 "type": "toggle-translate",
@@ -684,7 +684,7 @@
                         "Austrian"
                     ]
                 ],
-                "answer": "1,4"
+                "answer": [1,4]
             },
             {
                 "type": "fill-blank",
@@ -700,7 +700,7 @@
                     "Hugga Wugga",
                     "Wild Thing"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "true-false",
@@ -724,7 +724,7 @@
                     "I Get Around",
                     "Good Vibrations"
                 ],
-                "answer": 3
+                "answer": [3]
             },
             {
                 "type": "four-quarter",
@@ -735,7 +735,7 @@
                     "Gorrilla",
                     "Pitbull"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "single-select-item",
@@ -746,7 +746,7 @@
                     "White Rose",
                     "Black Moth"
                 ],
-                "answer": 0
+                "answer": [0]
             }
         ]
     },    {
@@ -768,7 +768,7 @@
                     "Eliminate",
                     "Execute"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "picker",
@@ -793,7 +793,7 @@
                     "Ewan McGregor",
                     "Anthony Daniels"
                 ],
-                "answer": "0,4"
+                "answer": [0,4]
             },
             {
                 "type": "picker",
@@ -818,7 +818,7 @@
                     "Richard Attenborough",
                     "Emmet Brown"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "picker",
@@ -853,7 +853,7 @@
                     "India",
                     "USA"
                 ],
-                "answer": 2
+                "answer": [2]
             },
             {
                 "type": "true-false",
@@ -896,7 +896,7 @@
                         "Cricket"
                     ]
                 ],
-                "answer": "2,3,4"
+                "answer": [2,3,4]
             },
             {
                 "type": "multi-select",
@@ -909,7 +909,7 @@
                     "Capetown",
                     "St. Mortiz"
                 ],
-                "answer": "0,1,2,4,5"
+                "answer": [0,1,2,4,5]
             },
             {
                 "type": "four-quarter",
@@ -920,7 +920,7 @@
                     "Big Bill Tilden",
                     "Bobby Jones"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "single-select-item",
@@ -931,7 +931,7 @@
                     "Pumptrack",
                     "Speedway"
                 ],
-                "answer": 1
+                "answer": [1]
             },
             {
                 "type": "fill-blank",
