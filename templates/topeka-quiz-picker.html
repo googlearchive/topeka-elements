@@ -24,6 +24,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   Polymer('topeka-quiz-picker', {
     
+    eventDelegates: {
+      down: 'answered',
+    },
+    
     quizChanged: function() {
       this.value = this.$.slider.value = this.$.slider.secondaryProgress = this.quiz.min || 0;
     }
