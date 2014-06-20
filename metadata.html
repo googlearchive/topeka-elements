@@ -178,3 +178,79 @@
   <property name="quiz" kind="json"></property>
 
 </x-meta>
+
+<x-meta id="quiz-demo-grid" label="Quiz Demo Grid" group="Demo">
+<template>
+  <section layout vertical designMeta="quiz-demo-grid" style="box-sizing:border-box;width:420px;height:630px;">
+
+    <div class="tall-toolbar categories" id="toolbar" style="box-sizing:border-box;height:30%;position:relative;color:#fff;padding:48px;font-size:48px;background-color:#00bbd3;">
+      <span>Quiz Demo</span>
+    </div>
+
+    <div class="tiles-container" id="tiles-container" layout wrap horizontal around-justified center relative style="padding-left:3px;height:70%;">
+
+      <div class="tile" id="tile-profile" style="background-color:#ccc;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
+        <section class="tile-top" flex layout horizontal center center-justified>
+          <core-icon icon="category-icons:food" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
+        </section>
+        <div class="tile-bottom" style="background-color:#aaa;padding:8px;color:#fff;">
+          Category 1
+        </div>
+      </div>
+
+      <div class="tile" id="tile-general" hero style="background-color:#ffff8d;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
+        <section class="tile-top" flex layout horizontal center center-justified>
+          <core-icon icon="category-icons:knowledge" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
+        </section>
+        <div class="tile-bottom" hero style="background-color:#ffeb3b;padding:8px;color:#fff;">
+          <span>General Knowledge</span>
+        </div>
+      </div>
+
+      <div class="tile" style="background-color:#b9f6ca;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
+        <section class="tile-top" flex layout horizontal center center-justified>
+          <core-icon icon="category-icons:history" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
+        </section>
+        <div class="tile-bottom" style="background-color:#0f9d58;padding:8px;color:#fff;">
+          Category 2
+        </div>
+      </div>
+
+      <div class="tile" style="background-color:#ff8a80;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
+        <section class="tile-top" flex layout horizontal center center-justified>
+          <core-icon icon="category-icons:geography" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
+        </section>
+        <div class="tile-bottom" style="background-color:#db4437;padding:8px;color:#fff;">
+          Category 3
+        </div>
+      </div>
+
+      <div class="tile" style="background-color:#82b1ff;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
+        <section class="tile-top" flex layout horizontal center center-justified>
+          <core-icon icon="category-icons:entertainment" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
+        </section>
+        <div class="tile-bottom" style="background-color:#4285f4;padding:8px;color:#fff;">
+          Category 4
+        </div>
+      </div>
+
+      <div class="tile" style="background-color:#b388ff;box-sizing:border-box;float:left;height:30%;width:48%;margin:3px;" layout vertical relative>
+        <section class="tile-top" flex layout horizontal center center-justified>
+          <core-icon icon="category-icons:music" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
+        </section>
+        <div class="tile-bottom" style="background-color:#7e57c2;padding:8px;color:#fff;">
+          Category 5
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+</template>
+
+<template id="imports">
+  <link rel="import" href="category-icons.html">
+  <link rel="import" href="../core-icon/core-icon.html">
+</template>
+</x-meta>
+
