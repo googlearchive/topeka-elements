@@ -337,7 +337,7 @@
                         "Kentucky"
                     ],
                     [
-                        "Kennedy Space Centre",
+                        "Kennedy Space Center",
                         "Florida"
                     ]
                 ],
@@ -494,7 +494,7 @@
                         "Sn"
                     ]
                 ],
-                "answer": [2,4]
+                "answer": [2,4,8]
             },
             {
                 "type": "true-false",
@@ -830,7 +830,7 @@
             {
                 "type": "fill-blank",
                 "question": "What is Mr. Burns’ first name?",
-                "answer": "Montgomery"
+                "answer": "Charles"
             }
         ]
     },
