@@ -251,7 +251,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         if (this.bumpTimeout) {
           clearTimeout(this.bumpTimeout);
         }
-        this.items1 = this.items2 = [];
+        this.items1 = this.items2 = this.queuedItems = null;
       }
     },
 
@@ -310,6 +310,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     leaderboardChange: function() {
+      if (!this.leaderboard) {
+        // Leaderboard was nuked
+        this.items1 = this.items2 = this.queuedItems = null;
+        return;
+      }
       var data = this.leaderboard;
       var uids = Object.keys(data);
       this.newScores = {};
