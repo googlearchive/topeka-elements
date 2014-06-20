@@ -30,7 +30,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .results-panel.wide > .card {
   width: 512px;
-  margin: 64px auto 0;
+  margin: 64px auto 64px;
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
