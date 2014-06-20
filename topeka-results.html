@@ -18,7 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="stylesheet" href="topeka-results.css">
 
-  <div class="results-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-down?="{{parentElement.selected !== 'results'}}" slide-up?="{{parentElement.selected === 'results'}}">
+  <div id="resultsPanel" class="results-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-down?="{{parentElement.selected !== 'results'}}" slide-up?="{{parentElement.selected === 'results'}}">
   
     <div class="card" flex?="{{!wide}}" vertical layout?="{{!wide}}">
     
@@ -28,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         
       </core-toolbar>
 
-      <div class="results-content" flex>
+      <div id="resultsContent" class="results-content" flex>
       
         <core-selector selected="{{selected}}">
   
@@ -70,7 +70,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   Polymer('topeka-results', {
     
+    resetScrollTop: function() {
+      this.$.resultsPanel.scrollTop = 0;
+      this.$.resultsContent.scrollTop = 0;
+    },
+    
     nextAction: function() {
+      this.resetScrollTop();
       this.fire('next');
     }
     

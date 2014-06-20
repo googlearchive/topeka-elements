@@ -28,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="stylesheet" href="topeka-quizzes.css">
 
-  <div class="quizzes-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-up?="{{parentElement.selected !== 'empty'}}" slide-down?="{{parentElement.selected === 'empty'}}">
+  <div id="quizzesPanel" class="quizzes-panel {{ {wide: wide} | tokenList }}" flex vertical layout?="{{!wide}}" slide-up?="{{parentElement.selected !== 'empty'}}" slide-down?="{{parentElement.selected === 'empty'}}">
   
     <div class="card {{ {answered: answered} | tokenList }}" flex?="{{!wide}}" vertical layout?="{{!wide}}" hero-p>
     
@@ -38,7 +38,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         
       </core-toolbar>
 
-      <div class="quizzes-content" hidden?="{{!category}}" flex hero-id="quizzes-content" hero?="{{parentElement.selected !== 'empty'}}">
+      <div id="quizzesContent" class="quizzes-content" hidden?="{{!category}}" flex hero-id="quizzes-content" hero?="{{parentElement.selected !== 'empty'}}">
       
         <core-selector id="quizViews" notap selected="{{quiz.type}}" cross-fade-delayed on-quiz-answered="{{quizAnswered}}" on-quiz-next="{{quizDone}}">
         
@@ -82,6 +82,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     created: function() {
       this.category = {};
       this.scores = [];
+    },
+    
+    resetScrollTop: function() {
+      this.$.quizzesPanel.scrollTop = 0;
+      this.$.quizzesContent.scrollTop = 0;
     },
 
     next: function() {
