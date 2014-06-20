@@ -27,9 +27,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width: 100%;
     }
 
-    .wide.card {
+    .wide.card:not(.tvmode) {
       width: 512px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      margin-top: 64px;
     }
 
     .wide.card.multi-column {
@@ -45,6 +45,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .main-button.wide {
+      position: fixed;
       top: 12px;
       left: 16px;
       fill: #424242;
@@ -65,7 +66,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     }
 
     .scroll {
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
     }
 
@@ -81,7 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .item {
       background-color: white;
       height: 56px;
-      padding: 8px 16px;
+      padding: 8px 24px;
       box-sizing: border-box;
       position: relative;
       font-size: 18px;
@@ -146,6 +148,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .main {
       position: relative;
     }
+
+    .main::-webkit-scrollbar {
+      display: none;
+    }
     
     .bg {
       background-color: #eee;
@@ -161,48 +167,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <div class="bg" fit dummy cross-fade></div>
 
-  <div class="main" flex center layout vertical hero-p>
-    <div flex slide-up-offscreen?="{{parentElement.selected === 'leaderboard'}}" cross-fade="{{!wide && parentElement.selected !== 'leaderboard'}}" class="card {{ {wide: wide, 'multi-column': columns>1, tvmode: tvmode} | tokenList }}" relative>
-      <div vertical layout fit cross-fade-delayed?="{{wide}}">
-        <core-toolbar>
-          <div class="title">Leaderboard</div>
-        </core-toolbar>
+  <div class="main {{ {scroll: wide} | tokenList }}" flex center layout vertical hero-p>
+    <div flex vertical layout slide-up-offscreen?="{{parentElement.selected === 'leaderboard'}}" cross-fade="{{!wide && parentElement.selected !== 'leaderboard'}}" class="card {{ {wide: wide, 'multi-column': columns>1, tvmode: tvmode} | tokenList }}" relative>
+      <core-toolbar>
+        <div class="title">Leaderboard</div>
+      </core-toolbar>
 
-        <div class="scroll" layout vertical flex>
-          <core-animated-pages id="pages" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition" layout flex?="{{columns>1}}">
-
-            <section class="list" layout>
-              <template repeat="{{u,i in items1}}">
-                <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
-                  <div class="rank">
-                    <div class="rankNo">{{i+1}}</div>
-                    <core-icon class="arrow" icon="arrow-back"></core-icon>
-                  </div>
-                  <core-icon size="40" class="avatar" icon="avatars:avatar-{{u.avatar}}"></core-icon>
-                  <div layout flex class="name">{{u.name}}</div>
-                  <div class="delta" hidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
-                  <div>{{u.score}}</div>
+      <div class="{{ {scroll: !wide} | tokenList }}" layout vertical flex>
+        <core-animated-pages id="pages" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition" layout flex>
+          <section class="list" layout>
+            <template repeat="{{u,i in items1}}">
+              <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
+                <div class="rank">
+                  <div class="rankNo">{{i+1}}</div>
+                  <core-icon class="arrow" icon="arrow-back"></core-icon>
                 </div>
-              </template>
-            </section>
+                <core-icon size="40" class="avatar" icon="avatars:avatar-{{u.avatar}}"></core-icon>
+                <div layout flex class="name">{{u.name}}</div>
+                <div class="delta" hidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
+                <div>{{u.score}}</div>
+              </div>
+            </template>
+          </section>
 
-            <section class="list" layout>
-              <template repeat="{{u,i in items2}}">
-                <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
-                  <div class="rank">
-                    <div class="rankNo">{{i+1}}</div>
-                    <core-icon class="arrow" icon="arrow-back"></core-icon>
-                  </div>
-                  <core-icon size="40" class="avatar" icon="avatars:avatar-{{u.avatar}}"></core-icon>
-                  <div layout flex class="name">{{u.name}}</div>
-                  <div class="delta" hidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
-                  <div>{{u.score}}</div>
+          <section class="list" layout>
+            <template repeat="{{u,i in items2}}">
+              <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
+                <div class="rank">
+                  <div class="rankNo">{{i+1}}</div>
+                  <core-icon class="arrow" icon="arrow-back"></core-icon>
                 </div>
-              </template>
-            </section>
+                <core-icon size="40" class="avatar" icon="avatars:avatar-{{u.avatar}}"></core-icon>
+                <div layout flex class="name">{{u.name}}</div>
+                <div class="delta" hidden?="{{!u.delta || !u.rising}}">{{u.delta}}</div>
+                <div>{{u.score}}</div>
+              </div>
+            </template>
+          </section>
 
-          </core-animated-pages>
-        </div>
+        </core-animated-pages>
       </div>
     </div>
     <paper-icon-button hidden?="{{tvmode}}" class="main-button {{ {wide: wide} | tokenList }}" icon="arrow-back" on-tap="{{mainAction}}" cross-fade-delayed?="{{!disabled}}" hero?="{{!disabled}}"></paper-icon-button>

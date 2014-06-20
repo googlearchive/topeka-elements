@@ -22,6 +22,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <link rel="import" href="../theme.html">  
   <link rel="import" href="../../font-roboto/roboto.html">
   <link rel="import" href="../../core-icons/core-icons.html">
+  <link rel="import" href="../../core-media-query/core-media-query.html">
   <link rel="import" href="../topeka-leaderboard.html">
   
   <style>
@@ -38,11 +39,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <topeka-leaderboard fit></topeka-leaderbaord>
   
+  <core-media-query query="min-width: 900px"></core-media-query>
+
+  
   <script>
   
     addEventListener('polymer-ready', function() {
   
       var l = document.querySelector('topeka-leaderboard');
+      var m = document.querySelector('core-media-query');
+      
+      m.addEventListener('core-media-change', function() {
+        l.wide = m.queryMatches;
+      });
+      
       l.user = {
         name: 'Frankie F',
         avatar: 1,
