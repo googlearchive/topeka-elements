@@ -17,7 +17,7 @@
             },
             {
                 "type": "true-false",
-                "question": "Coffee Beans contain more caffeine than tea leaves",
+                "question": "Coffee beans contain more caffeine than tea leaves.",
                 "answer": false
             },
             {
@@ -47,7 +47,7 @@
             },
             {
                 "type": "single-select-item",
-                "question": "What vegetable did Mark Twain describe as “Cabbage with a college education”?",
+                "question": "What vegetable did Mark Twain describe as “cabbage with a college education”?",
                 "options": [
                     "Spinach",
                     "Broccoli",
@@ -81,7 +81,7 @@
             },
             {
                 "type": "fill-blank",
-                "question": "In which American State did chilli con carne originate?",
+                "question": "In which American State did chili con carne originate?",
                 "answer": "Texas"
             },
             {
@@ -104,12 +104,12 @@
         "quizzes": [
             {
                 "type": "fill-blank",
-                "question": "Mole is a popular paste in Mexico. Mole is a mixture of chilli’s and what other tasty ingredient?",
+                "question": "Mole is a popular paste in Mexico. Mole is a mixture of chili’s and what other tasty ingredient?",
                 "answer": "Chocolate"
             },
             {
                 "type": "four-quarter",
-                "question": "What is the name of the famous art deco skyscraper in New York city?",
+                "question": "What is the name of the famous art deco skyscraper in New York City?",
                 "options": [
                     "Trump Tower",
                     "Chrysler building",
@@ -120,7 +120,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "Select the names of “The Three Musketeers.”",
+                "question": "Select the names of “The Three Musketeers”.",
                 "options": [
                     "Chevy",
                     "Topeka",
@@ -134,7 +134,7 @@
             },
             {
                 "type": "toggle-translate",
-                "question": "Which is the correct Translation of Zorro?",
+                "question": "Which is the correct translation of Zorro?",
                 "options": [
                     [
                         "Zorro",
@@ -157,7 +157,7 @@
             },
             {
                 "type": "single-select-item",
-                "question": "Which 1971 film, known for its violence was the first to use Dolby sound?",
+                "question": "Which 1971 film, known for its violence, was the first to use Dolby sound?",
                 "options": [
                     "Straw Dogs",
                     "Dirty Harry",
@@ -175,7 +175,7 @@
             },
             {
                 "type": "true-false",
-                "question": "There is a patron Saint of The Internet.",
+                "question": "There is a patron saint of The Internet.",
                 "answer": true
             },
             {
@@ -185,7 +185,7 @@
             },
             {
                 "type": "four-quarter",
-                "question": "Four of the worst 10 maritime disasters all took place in 1945. In which sea were  all four ships sunk ?",
+                "question": "Four of the worst ten maritime disasters all took place in 1945. In which sea were all four ships sunk?",
                 "options": [
                     "Mediterranean sea",
                     "Baltic Sea",
@@ -196,7 +196,7 @@
             },
             {
                 "type": "single-select",
-                "question": "What nut is used to flavour marzipan?",
+                "question": "What nut is used to flavor marzipan?",
                 "options": [
                     "Walnut",
                     "Almond",
@@ -214,7 +214,7 @@
         "quizzes": [
             {
                 "type": "fill-blank",
-                "question": "The first words spoken on the moon by Buzz Aldrin were this:",
+                "question": "The first words spoken on the moon by Buzz Aldrin were these:",
                 "start": "Contact ",
                 "answer": "Light"
             },
@@ -248,7 +248,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "What are the surnames of Bonnie and Clyde.",
+                "question": "What are the surnames of Bonnie and Clyde?",
                 "options": [
                     "Parson",
                     "Parker",
@@ -261,7 +261,7 @@
             },
             {
                 "type": "four-quarter",
-                "question": "Joan of Arc in the 15th century, was the first female promoted to this rank in the French army.",
+                "question": "Joan of Arc, in the 15th century, was the first female promoted to this rank in the French army:",
                 "options": [
                     "Lieutenant",
                     "Sergeant",
@@ -279,7 +279,7 @@
             },
             {
                 "type": "single-select",
-                "question": "On which island was Napoleon Born?",
+                "question": "On which island was Napoleon born?",
                 "options": [
                     "Sardinia",
                     "Corsica",
@@ -291,7 +291,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "Which States did the United States gain after the Mexican War?",
+                "question": "Which states did the United States gain after the Mexican War?",
                 "options": [
                     "Arizona",
                     "New Mexico",
@@ -318,7 +318,7 @@
             },
             {
                 "type": "toggle-translate",
-                "question": "Toggle the words and select which landmark to American state pairings are correct.",
+                "question": "Select which landmark to American state pairings are correct:",
                 "options": [
                     [
                         "Las Vegas",
@@ -377,7 +377,7 @@
             },
             {
                 "type": "single-select-item",
-                "question": "In which city were the 1992 Olympics?",
+                "question": "In which city was the 1992 Olympics?",
                 "options": [
                     "Atlanta",
                     "Barcelona",
@@ -393,7 +393,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "Select two countries that are linked by the Brenner Pass?",
+                "question": "Select two countries that are linked by the Brenner Pass:",
                 "options": [
                     "Germany",
                     "Croatia",
@@ -455,7 +455,7 @@
             },
             {
                 "type": "toggle-translate",
-                "question": "Which Chemical symbols are incorrect",
+                "question": "Which chemical symbols are incorrect?",
                 "options": [
                     [
                         "Helium",
@@ -498,7 +498,7 @@
             },
             {
                 "type": "true-false",
-                "question": "The Vitreous Humour is found in the human eye.",
+                "question": "The vitreous humour is found in the human eye.",
                 "answer": true
             },
             {
@@ -549,7 +549,7 @@
         "quizzes": [
             {
                 "type": "multi-select",
-                "question": "Actors that played James Bond",
+                "question": "Select the actors who played James Bond:",
                 "options": [
                     "Sean Connery",
                     "Clive Owen",
@@ -567,7 +567,7 @@
             },
             {
                 "type": "four-quarter",
-                "question": "In Which famous Sci Fi film did Robert Patrick play an assassin?",
+                "question": "In which famous sci-fi film did Robert Patrick play an assassin?",
                 "options": [
                     "Blade Runner",
                     "Terminator 2",
@@ -596,18 +596,18 @@
             },
             {
                 "type": "fill-blank",
-                "question": "Before coming to New York in the 1933 film King Kong where had Kong lived?",
+                "question": "Where had King Kong lived before coming to New York in the 1933 film \"King Kong\"?",
                 "end": "island",
                 "answer": "skull"
             },
             {
                 "type": "true-false",
-                "question": "Stanely Kubrick Directed the 1971 film THX 1138.",
+                "question": "Stanley Kubrick directed the 1971 film \"THX 1138.\"",
                 "answer": false
             },
             {
                 "type": "picker",
-                "question": "The film Ben Hur holds the record for winning more Oscars than any other movie. How many?",
+                "question": "The film \"Ben Hur\" holds the record for winning more Oscars than any other movie. How many?",
                 "min": 4,
                 "max": 15,
                 "answer": 11
@@ -637,7 +637,7 @@
         "quizzes": [
             {
                 "type": "four-quarter",
-                "question": "Who was the youngest Beatle.",
+                "question": "Who was the youngest Beatle?",
                 "options": [
                     "John",
                     "Paul",
@@ -648,7 +648,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "Best known for playing the trumpet.",
+                "question": "Best known for playing the trumpet:",
                 "options": [
                     "Miles Davis",
                     "Chet Baker",
@@ -661,7 +661,7 @@
             },
             {
                 "type": "toggle-translate",
-                "question": "Which Nationality of the following composers is incorrect?",
+                "question": "Which nationality of the following composers is incorrect?",
                 "options": [
                     [
                         "Johann Sebastian Bach",
@@ -739,7 +739,7 @@
             },
             {
                 "type": "single-select-item",
-                "question": "After Simeon Oliver Coxe III incorporated a 1940’s audio oscillator his band was renamed this, after a William Butler Yeats poem.",
+                "question": "After Simeon Oliver Coxe III incorporated a 1940s audio oscillator his band was renamed this, after a William Butler Yeats poem:",
                 "options": [
                     "Silver Apples",
                     "Golden Oranges",
@@ -761,7 +761,7 @@
             },
             {
                 "type": "four-quarter",
-                "question": "What catchphrase is associated with the Darleks from Doctor Who?",
+                "question": "What catchphrase is associated with the Daleks from Doctor Who?",
                 "options": [
                     "Eradicate",
                     "Exterminate",
@@ -784,7 +784,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "In the star wars films which 2 British actors have played Obi Wan Kenobi?",
+                "question": "Which two British actors have played Obi Wan Kenobi in the Star Wars films?",
                 "options": [
                     "Sir Alec Guinness",
                     "David Prowse",
@@ -797,7 +797,7 @@
             },
             {
                 "type": "picker",
-                "question": " How many oscars were won by the film Matrix at the 2000 Academy Awards ceremony?",
+                "question": "How many Oscars were won by the film Matrix at the 2000 Academy Awards ceremony?",
                 "min": 0,
                 "max": 11,
                 "answer": 4
@@ -841,7 +841,7 @@
         "quizzes": [
             {
                 "type": "fill-blank",
-                "question": "What is the national sport of Canada",
+                "question": "What is the national sport of Canada?",
                 "answer": "Lacrosse"
             },
             {
@@ -900,7 +900,7 @@
             },
             {
                 "type": "multi-select",
-                "question": "Which cities have hosted the olympic games?",
+                "question": "Which cities have hosted the Olympic games?",
                 "options": [
                     "Athens",
                     "Lake Placid",
@@ -913,7 +913,7 @@
             },
             {
                 "type": "four-quarter",
-                "question": "4 Quarters. Which American was the best paid sportsman in 1920?",
+                "question": "Which American was the best paid sportsman in 1920?",
                 "options": [
                     "Jack Dempsey",
                     "Babe Ruth",
@@ -935,7 +935,7 @@
             },
             {
                 "type": "fill-blank",
-                "question": "In 1954, Joe Di Maggio married Norma Jean Baker who was  also known as?",
+                "question": "In 1954, Joe Di Maggio married Norma Jean Baker who was also known as?",
                 "answer": "Marilyn Monroe"
             },
             {
