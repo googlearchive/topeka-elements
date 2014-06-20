@@ -22,6 +22,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   color: #00bad2
 }
 
+@media screen and (max-width: 350px) {
+  .picker-value {
+    padding-left: 0;
+  }
+}
+
 paper-slider {
   width: 100%;
 }
