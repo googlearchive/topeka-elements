@@ -26,7 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <core-animated-pages selected="{{selected}}" transitions="cross-fade cross-fade-delayed scale-up slide-up slide-up-offscreen slide-down tile-cascade hero-transition" flex>
     
     <div name="splash">
-      <span fit class="splash" cross-fade></span>
+      <span fit class="splash {{ {wide: wide} | tokenList }}" cross-fade></span>
     </div>
     
     <topeka-categories id="categories" name="categories" user="{{user}}" allScores="{{allScores}}"

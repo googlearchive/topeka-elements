@@ -17,3 +17,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   background-position: 50%;
   background-image: url(images/splash.svg);
 }
+
+.splash.wide {
+  background-size: 512px;
+}

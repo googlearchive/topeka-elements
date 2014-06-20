@@ -14,13 +14,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   z-index: 10000;
 }
 
-.category-bg {
-  position: absolute !important;
-  margin-bottom: 128px;
+.wide .category-bg {
+  width: 512px;
+  height: 512px;
 }
 
-.wide .category-bg > svg {
-  margin: auto;
+.category-bg > core-icon {
+  position: absolute !important;
 }
 
 .wide > .main-button {
