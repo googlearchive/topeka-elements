@@ -15,7 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <template>
   
   <firebase-login id="fbLogin" provider="anonymous" params='{"rememberMe": true}' location="https://polymer-topeka.firebaseio.com" user="{{fbUser}}" statusKnown="{{statusKnown}}"></firebase-login>
-  <firebase-element id="fbUser" location="{{!offline && fbUser ? 'https://polymer-topeka.firebaseio.com/users/' + fbUser.uid : null}}" priority="{{user.score}}"></firebase-element>
+  <firebase-element id="fbUser" location="{{!offline && fbUser ? 'https://polymer-topeka.firebaseio.com/users/' + fbUser.uid : null}}" priority="{{user.score}}" dataReady="{{userReady}}"></firebase-element>
   <core-ajax auto handleAs="json" url="{{url}}" response="{{categories}}"></core-ajax>
 
 </template>
@@ -27,6 +27,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       user: null,
       categories: null,
       url: ''
+    },
+
+    observe: {
+      'fbUser userReady': 'syncUser'
     },
 
     ready: function() {
@@ -60,8 +64,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     },
 
-    fbUserChanged: function() {
-      if (this.fbUser) {
+    syncUser: function() {
+      if (this.fbUser && this.userReady) {
         this.$.fbUser.data = this.user;
       } else {
         this.$.fbUser.data = null;
@@ -72,7 +76,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       if (!this.user) {
         this.logout();
       }
-      this.fbUserChanged();
+      this.syncUser();
       this.observeUser();
       this.userFieldsChanged();
     },
