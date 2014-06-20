@@ -106,12 +106,12 @@ paper-fab.check-button {
 }
 
 .answered paper-fab.check-button.correct {
-  background-color: #00c853;
+  background-color: #00e676;
   fill: #fff;
 }
 
 .answered paper-fab.check-button.incorrect {
-  background-color: #dd2c00;
+  background-color: #ff5252;
   fill: #fff;
 }
 
