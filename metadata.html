@@ -1,4 +1,4 @@
-<x-meta id="topeka-avatar" label="Topeka Avatar" group="Topeka" hideSubtree>
+<x-meta id="topeka-avatar" label="Avatar" group="Topeka" hideSubtree>
 
   <template>
     <core-icon icon="avatars:avatar-1" size="0" style="height: 64px; width: 64px;" designMeta="topeka-avatar"></core-icon>
@@ -13,7 +13,25 @@
 
 </x-meta>
 
-<x-meta id="topeka-icon" label="Topeka Icon" group="Topeka" hideSubtree>
+<x-meta id="topeka-avatar-selector" label="Avatar Selector" group="Topeka">
+
+  <template>
+    <core-selector selected="0" flex layout horizontal>
+      <core-icon icon="avatars:avatar-1" size="64" style="height: 64px; width: 64px; border-radius: 50%; overflow: hidden;" designMeta="topeka-avatar"></core-icon>
+      <core-icon icon="avatars:avatar-2" size="64" style="height: 64px; width: 64px; margin: 0 8px; border-radius: 50%; overflow: hidden;" designMeta="topeka-avatar"></core-icon>
+      <core-icon icon="avatars:avatar-3" size="64" style="height: 64px; width: 64px; border-radius: 50%; overflow: hidden;" designMeta="topeka-avatar"></core-icon>
+    </core-selector>
+  </template>
+
+  <template id="imports">
+    <link rel="import" href="avatars.html">
+    <link rel="import" href="../core-icon/core-icon.html">
+    <link rel="import" href="../core-selector/core-selector.html">
+  </template>
+
+</x-meta>
+
+<x-meta id="topeka-icon" label="Icon" group="Topeka" hideSubtree>
 
   <template>
     <core-icon icon="category-icons:food" size="0" style="height: 128px; width: 128px;" designMeta="topeka-icon"></core-icon>
@@ -28,7 +46,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-image" label="Topeka Background" group="Topeka" hideSubtree>
+<x-meta id="topeka-image" label="Background" group="Topeka" hideSubtree>
 
   <template>
     <core-icon icon="category-images:food" size="0" style="height: 256px; width: 256px;" designMeta="topeka-image"></core-icon>
@@ -43,7 +61,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-app" label="Topeka App" group="Topeka" hideSubtree>
+<x-meta id="topeka-app" label="App" group="Topeka" hideSubtree>
 
   <template>
     <topeka-app style="width: 300px; height: 300px;"></topeka-app>
@@ -61,7 +79,7 @@
 </x-meta>
 
 
-<x-meta id="topeka-demo" label="Topeka Demo" group="Topeka" hideSubtree>
+<x-meta id="topeka-demo" label="Demo" group="Topeka" hideSubtree>
 
   <template>
     <div style="height: 100%; width: 100%; overflow: hidden;">
@@ -82,7 +100,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-categories" label="Topeka Categories" group="Topeka" hideSubtree>
+<x-meta id="topeka-categories" label="Categories" group="Topeka" hideSubtree>
 
   <template>
     <topeka-categories style="width: 300px; height: 300px;"></topeka-categories>
@@ -96,7 +114,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-category" label="Topeka Category" group="Topeka" hideSubtree>
+<x-meta id="topeka-category" label="Category" group="Topeka" hideSubtree>
 
   <template>
     <topeka-category style="width: 300px; height: 300px;"></topeka-category>
@@ -110,7 +128,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-datasource" label="Topeka Datasource" group="Topeka" hideSubtree>
+<x-meta id="topeka-datasource" label="Datasource" group="Topeka" hideSubtree>
 
   <template>
     <topeka-datasource url="categories.json"></topeka-datasource>
@@ -122,7 +140,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-profile" label="Topeka Profile" group="Topeka" hideSubtree>
+<x-meta id="topeka-profile" label="Profile" group="Topeka" hideSubtree>
 
   <template>
     <topeka-profile style="width: 300px; height: 300px;"></topeka-profile>
@@ -135,7 +153,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-leaderboard" label="Topeka Leaderboard" group="Topeka" hideSubtree>
+<x-meta id="topeka-leaderboard" label="Leaderboard" group="Topeka" hideSubtree>
 
   <template>
     <topeka-leaderboard style="width: 300px; height: 300px;"></topeka-leaderboard>
@@ -148,7 +166,7 @@
 
 </x-meta>
 
-<x-meta id="topeka-quizzes" label="Topeka Quizzes" group="Topeka" hideSubtree>
+<x-meta id="topeka-quizzes" label="Quizzes" group="Topeka" hideSubtree>
 
   <template>
     <topeka-quizzes style="width: 300px; height: 300px;"></topeka-quizzes>
@@ -163,7 +181,7 @@
   <property name="category" kind="json"></property>
 </x-meta>
 
-<x-meta id="topeka-quiz-view" label="Topeka Quiz View" group="Topeka" hideSubtree>
+<x-meta id="topeka-quiz-view" label="Quiz View" group="Topeka" hideSubtree>
 
   <template>
     <topeka-quiz-view style="width: 300px; height: 300px;"></topeka-quiz-view>
@@ -254,3 +272,56 @@
 </template>
 </x-meta>
 
+<x-meta id="quiz-demo-front-page" label="Quiz Demo Front Page" group="Demo">
+<template>
+
+  <section layout vertical style="box-sizing:border-box;width:420px;height:630px;">
+
+    <section class="top" hero style="background-color:#ffff8d;" flex layout horizontal center center-justified>
+    </section>
+    <div class="bottom" hero style="box-sizing:border-box;position:relative;height:80px;background-color:#ffeb3b;padding:24px;color:#fff;font-size:32px;">
+      <span>General Knowledge</span>
+    </div>
+    <div hero class="dummy"></div>
+    <div class="fab fab-0" style="position:absolute;fill:#fff;bottom:50px;right:24px;">
+      <paper-fab icon="av:play-arrow" style="background-color:#ff4081;"></paper-fab>
+    </div>
+  </section>
+
+</template>
+
+<template id="imports">
+  <link rel="import" href="../core-icons/core-icons.html">
+  <link rel="import" href="../core-icons/iconsets/av-icons.html">
+  <link rel="import" href="../paper-fab/paper-fab.html">
+</template>
+</x-meta>
+
+<x-meta id="quiz-demo-question" label="Quiz Demo Question" group="Demo">
+<template>
+
+  <section layout vertical style="box-sizing:border-box;width:420px;height:630px;">
+
+    <div hero style="box-sizing:border-box;position:relative;height:240px;background-color:#ffeb3b;padding:24px;color:#fff;font-size:32px;">
+      <span>Question</span>
+    </div>
+    <section hero flex style="background-color:#eee;padding:24px;font-size:16px;">
+      <span>Answer here</span>
+    </section>
+  </section>
+
+</template>
+</x-meta>
+
+<x-meta id="quiz-demo-score" label="Quiz Demo Score" group="Demo">
+<template>
+
+  <section layout vertical style="box-sizing:border-box;width:420px;height:630px;background-color:#ffff8d;" center center-justified>
+
+    <div hero style="box-sizing:border-box;position:relative;height:150px;width:150px;background-color:#ffeb3b;color:#fff;font-size:100px;" layout vertical center center-justified>
+      <span>+8</span>
+    </div>
+  </section>
+
+</template>
+</x-meta>
