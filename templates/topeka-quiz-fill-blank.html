@@ -49,7 +49,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     
     areEqual: function(s1, s2) {
-      return s1 && s2 && s1.toLowerCase() === s2.toLowerCase();
+      return s1 && s2 && s1.trim().toLowerCase() === s2.trim().toLowerCase();
     }
     
   });
