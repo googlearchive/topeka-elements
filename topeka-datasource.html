@@ -15,7 +15,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <template>
   
   <firebase-login id="fbLogin" provider="anonymous" params='{"rememberMe": true}' location="https://polymer-topeka.firebaseio.com" user="{{fbUser}}" statusKnown="{{statusKnown}}"></firebase-login>
-  <firebase-element id="fbUser" location="{{!offline && fbUser ? 'https://polymer-topeka.firebaseio.com/users/' + fbUser.uid : null}}" priority="{{user.score}}" data="{{user}}" dataReady="{{connected}}"></firebase-element>
+  <firebase-element id="fbUser" location="{{!offline && fbUser ? 'https://polymer-topeka.firebaseio.com/users/' + fbUser.uid : null}}" priority="{{user.priority}}"></firebase-element>
   <core-ajax auto handleAs="json" url="{{url}}" response="{{categories}}"></core-ajax>
 
 </template>
@@ -26,8 +26,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     publish: {
       user: null,
       categories: null,
-      url: '',
-      connected: false
+      url: ''
     },
 
     ready: function() {
@@ -39,18 +38,60 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           avatar: 1,
           score: 0
         };
+      } else {
+        try {
+          this.user = JSON.parse(localStorage.getItem('topeka-user'))
+        } catch (e) {
+          this.user = null;
+        }
       }
+
+      window.addEventListener('offline', function() {
+        Firebase.goOffline();
+      });
+      window.addEventListener('online', function() {
+        Firebase.goOnline();
+      });
     },
+
     statusKnownChanged: function() {
       if (this.statusKnown && !this.offline && !this.fbUser) {
         this.$.fbLogin.login();
       }
     },
+
+    fbUserChanged: function() {
+      if (this.fbUser) {
+        this.$.fbUser.data = this.user;
+      } else {
+        this.$.fbUser.data = null;
+      }
+    },
+
     userChanged: function() {
       if (!this.user) {
         this.logout();
       }
+      this.fbUserChanged();
+      this.observeUser();
+      this.userFieldsChanged();
     },
+
+    observeUser: function() {
+      if (this.userObserver) {
+        this.userObserver.close();
+        this.userObserver = null;
+      }
+      if (this.user) {
+        this.userObserver = new ObjectObserver(this.user);
+        this.userObserver.open(this.userFieldsChanged.bind(this));
+      }
+    },
+
+    userFieldsChanged: function(added, removed, changed, getOldValueFn) {
+      localStorage.setItem('topeka-user', JSON.stringify(this.user));
+    },
+
     logout: function() {
       this.$.fbLogin.logout();
       this.$.fbLogin.login();

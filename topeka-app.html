@@ -18,7 +18,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../core-animated-pages/transitions/tile-cascade.html">
 <link rel="import" href="../core-media-query/core-media-query.html">
 
-<polymer-element name="topeka-app" attributes="user categories connected" vertical layout>
+<polymer-element name="topeka-app" attributes="user categories" vertical layout>
 <template>
 
   <link rel="stylesheet" href="topeka-app.css">
@@ -57,9 +57,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     minSplashTime: 1000,
     
     observe: {
-      'user connected offline': 'startup'
+      'user': 'startup'
     },
-    
+
     ready: function() {
       this.test = window.location.search.indexOf('test') >= 0;
       this.offline = this.test || window.location.search.indexOf('offline') >= 0;
@@ -80,6 +80,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // repopulate history state so we get the popstate event again
         history.pushState(dummyState, '');
       }.bind(this);
+
+      this.startup();
     },
 
     eventDelegates: {
@@ -162,11 +164,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
     
     startup: function() {
-      if (this.connected || this.offline) {
-        var elapsed = Date.now() - this.readyTime;
-        var t = this.minSplashTime - elapsed;
-        this.async('completeStartup', null, t > 0 ? t : 0);
-      }
+      var elapsed = Date.now() - this.readyTime;
+      var t = this.minSplashTime - elapsed;
+      this.async('completeStartup', null, t > 0 ? t : 0);
     },
     
     completeStartup: function() {
