@@ -36,8 +36,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
     isCorrect: function() {
       var a = this.quiz.answer;
+      var v = [this.value, this.value2].sort();
       if (a && a.length === 2) {
-        return this.areEqual(this.value, a[0]) && this.areEqual(this.value2, a[1]);
+        return this.areEqual(v[0], a[0]) && this.areEqual(v[1], a[1]);
       }
     }
     
