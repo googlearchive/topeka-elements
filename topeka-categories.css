@@ -85,8 +85,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .completed .category-bg-wrapper {
-  width: 96px;
-  height: 96px;
+  width: 96px !important;
+  height: 96px !important;
 }
 
 .cat-name {
