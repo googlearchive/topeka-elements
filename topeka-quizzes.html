@@ -135,7 +135,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       this.async(function() {
         this.fire('quiz-done', {score: s});
-      }, null, 1000);
+      }, null, parseInt(CoreStyle.g.transitions.duration));
     },
     
     quizAnswered: function() {

@@ -46,6 +46,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 </template>
 <script>
 
+(function() {
+
+  window.setTopekaTransitionSpeed = function(ms) {
+    CoreStyle.g.transitions.duration = ms + 'ms';
+    CoreStyle.g.transitions.scaleDelay = CoreStyle.g.transitions.duration;  
+  }
+
+  setTopekaTransitionSpeed(350);
+
   Polymer('topeka-app', {
     
     selected: 'splash',
@@ -181,5 +190,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
   });
 
+})();
 </script>
 </polymer-element>
