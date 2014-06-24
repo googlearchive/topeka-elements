@@ -173,7 +173,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </core-toolbar>
 
       <div class="{{ {scroll: !wide} | tokenList }}" layout vertical flex>
-        <core-animated-pages id="pages" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition" layout flex>
+        <core-animated-pages id="pages" selected="{{selected}}" on-core-animated-pages-transition-end="{{done}}" transitions="hero-transition" layout flex no-transition?="{{disabled}}">
           <section class="list" layout>
             <template repeat="{{u,i in items1}}">
               <div hero hero-id="{{u.uid}}" class="item {{u.rising ? 'rising':''}}" style="{{ columns>1 ? 'width:' + (1/columns*100) + '%' : '' }}" layout horizontal center>
@@ -378,6 +378,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     mainAction: function() {
+      if (this.$.pages.transitioning.length > 0) {
+        this.$.pages.complete();
+      }
+      this.disabled = true;
       this.fire('main');
     },
 

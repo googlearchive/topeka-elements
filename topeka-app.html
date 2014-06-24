@@ -23,7 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <link rel="stylesheet" href="topeka-app.css">
   
-  <core-animated-pages selected="{{selected}}" transitions="cross-fade cross-fade-delayed scale-up slide-up slide-up-offscreen slide-down tile-cascade hero-transition" flex>
+  <core-animated-pages selected="{{selected}}" transitions="cross-fade cross-fade-delayed scale-up slide-up slide-up-offscreen slide-down tile-cascade hero-transition" flex on-core-animated-pages-transition-end="{{transitionEndAction}}">
     
     <div name="splash">
       <span fit class="splash {{ {wide: wide} | tokenList }}" cross-fade></span>
@@ -35,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
     <topeka-category id="category" name="category" user="{{user}}" category="{{category}}" allScores="{{allScores}}" wide="{{wide}}"></topeka-category>
       
-    <topeka-leaderboard name="leaderboard" user="{{user}}" wide="{{wide}}" disabled="{{selected != 'leaderboard'}}"></topeka-leaderboard>
+    <topeka-leaderboard name="leaderboard" user="{{user}}" wide="{{wide}}" disabled="{{disableLeaderboard}}"></topeka-leaderboard>
 
     <topeka-profile id="profile" name="profile" user="{{user}}" wide="{{wide}}"></topeka-profile>
     
@@ -64,6 +64,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     connected: false,
     
     minSplashTime: 1000,
+
+    disableLeaderboard: false,
     
     observe: {
       'user': 'startup'
@@ -186,6 +188,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.resetScores();
         this.selected = 'profile';
       }
+    },
+
+    transitionEndAction: function() {
+      this.disableLeaderboard = (this.selected !== 'leaderboard');
     }
     
   });
