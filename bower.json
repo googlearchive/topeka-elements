@@ -18,6 +18,7 @@
     "core-drawer-panel": "Polymer/core-drawer-panel#master",
     "core-icon-button": "Polymer/core-icon-button#master",
     "core-icons": "Polymer/core-icons#master",
+    "core-ajax": "Polymer/core-ajax#master",
     "core-scroll-header-panel": "Polymer/core-scroll-header-panel#master",
     "core-style": "Polymer/core-style#master",
     "font-roboto": "Polymer/font-roboto#master",
