@@ -21,6 +21,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .category-bg > core-icon {
   position: absolute !important;
+  height: 100%;
+  width: 100%;
 }
 
 .wide > .main-button {

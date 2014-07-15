@@ -24,7 +24,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
     <core-toolbar class="category-toolbar" slide-down?="{{parentElement.selected !== 'category' && parentElement.lastSelected !== 'category'}}">
     
-      <core-icon icon="avatars:avatar-{{user.avatar}}" size="64" class="topeka-avatar"></core-icon>
+      <core-icon icon="avatars:avatar-{{user.avatar}}" class="topeka-avatar"></core-icon>
       <div flex class="user-name">{{user.name}}</div>
       <div>{{user.score}} pts</div>
       
@@ -39,7 +39,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <!-- sizing wrapper -->
             <div fit layout vertical center center-justified>
               <div class="category-bg-wrapper" relative>
-                <core-icon size="" icon="category-icons:leaderboard" class="category-tile-bg" fit></core-icon>
+                <core-icon icon="category-icons:leaderboard" class="category-tile-bg" fit></core-icon>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <!-- sizing wrapper -->
                 <div fit layout vertical center center-justified>
                   <div class="category-bg-wrapper" relative>
-                    <core-icon size="" class="category-tile-bg {{ {'theme-icon': scores.length === cat.quizzes.length} | tokenList }}" icon="{{scores.length === cat.quizzes.length ? 'check' : 'category-icons:' + cat.id}}" cross-fade-delayed?="{{category.name === cat.name && parentElement.lastSelected === 'category'}}" fit></core-icon>
+                    <core-icon class="category-tile-bg {{ {'theme-icon': scores.length === cat.quizzes.length} | tokenList }}" icon="{{scores.length === cat.quizzes.length ? 'check' : 'category-icons:' + cat.id}}" cross-fade-delayed?="{{category.name === cat.name && parentElement.lastSelected === 'category'}}" fit></core-icon>
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <!-- sizing wrapper -->
             <div fit layout vertical center center-justified>
               <div class="category-bg-wrapper" relative>
-                <core-icon size="" icon="category-icons:profile" class="category-tile-bg" fit></core-icon>
+                <core-icon icon="category-icons:profile" class="category-tile-bg" fit></core-icon>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       
       <div class="category-item polymer-logo" hidden?="{{wide}}" vertical layout>
         <div class="tile" fit>
-          <core-icon size icon="category-icons:polymer"></core-icon>
+          <core-icon icon="category-icons:polymer"></core-icon>
         </div>
       </div>
     

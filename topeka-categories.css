@@ -27,6 +27,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .topeka-avatar {
   border-radius: 50%;
   overflow: hidden;
+  height: 64px;
+  width: 64px;
+}
+
+
+.category-bg-wrapper core-icon {
+  height: 100%;
+  width: 100%;
 }
 
 .category-list {

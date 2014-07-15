@@ -11,7 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-fab/paper-fab.html">
 <link rel="import" href="../paper-button/paper-button.html">
-<link rel="import" href="../core-icons/iconsets/icons.html">
+<link rel="import" href="../core-icons/icons.html">
 <link rel="import" href="avatars.html">
 
 <polymer-element name="topeka-profile" attributes="user userDefaults wide" center layout vertical>
@@ -62,6 +62,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       border-radius: 50%;
       display: inline-block;
       overflow: hidden;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
     }
 
     .avatar-wrapper {
@@ -146,7 +148,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <core-selector selected="{{selectedAvatar}}" layout horizontal justified wrap>
             <template repeat="{{i in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]}}">
               <div class="avatar-wrapper">
-                <core-icon size="64" icon="avatars:avatar-{{i}}" class="topeka-avatar"></core-icon>
+                <core-icon icon="avatars:avatar-{{i}}" class="topeka-avatar"></core-icon>
               </div>
             </template>
             <template repeat="{{i in [1,2,3,4,5,6,7,8]}}">

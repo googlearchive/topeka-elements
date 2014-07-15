@@ -25,6 +25,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     .topeka-avatar {
       border-radius: 50%;
       overflow: hidden;
+      width: 40px;
+      height: 40px;
     }
     
     paper-progress {
@@ -62,7 +64,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   
   <div class="info {{ {wide: wide} | tokenList }}" flex horizontal center layout>
 
-    <core-icon size="40" icon="avatars:avatar-{{avatar}}" class="topeka-avatar"></core-icon>
+    <core-icon icon="avatars:avatar-{{avatar}}" class="topeka-avatar"></core-icon>
     
     <div class="cat-info" flex vertical layout>
       <div class="title font-medium">{{category.name}}</div>
