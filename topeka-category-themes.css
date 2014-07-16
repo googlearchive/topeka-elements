@@ -12,7 +12,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .yellow-theme.theme-bg {
   background-color: #ffeb3b;
   color: #616161;
-  fill: #616161;
 }
 
 .yellow-theme /deep/ .theme-bg-a,
@@ -22,7 +21,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .yellow-theme /deep/ .theme-color {
   color: #616161;
-  fill: #616161;
 }
 
 .yellow-theme /deep/ .theme-primary-color {
@@ -30,7 +28,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .yellow-theme /deep/ .theme-icon {
-  fill: #ffeb3b;
+  color: #ffeb3b;
 }
 
 .yellow-theme /deep/ .theme-border-color {
@@ -50,7 +48,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .green-theme.theme-bg {
   background-color: #1de9b6;
   color: #616161;
-  fill: #616161;
 }
 
 .green-theme /deep/ .theme-bg-a,
@@ -60,11 +57,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .green-theme /deep/ .theme-color {
   color: #616161;
-  fill: #616161;
-}
+ }
 
 .green-theme /deep/ .theme-icon {
-  fill: #1de9b6;
+  color: #1de9b6;
 }
 
 .green-theme /deep/ .theme-primary-color {
@@ -88,7 +84,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .red-theme.theme-bg {
   background-color: #ff5252;
   color: #fff;
-  fill: #fff;
 }
 
 .red-theme /deep/ .theme-bg-a,
@@ -98,11 +93,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .red-theme /deep/ .theme-color {
   color: #fff;
-  fill: #fff;
 }
 
 .red-theme /deep/ .theme-icon {
-  fill: #ff5252;
+  color: #ff5252;
 }
 
 .red-theme /deep/ .theme-primary-color {
@@ -126,7 +120,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .blue-theme.theme-bg {
   background-color: #03A9F4;
   color: #fff;
-  fill: #fff;
 }
 
 .blue-theme /deep/ .theme-bg-a,
@@ -136,11 +129,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .blue-theme /deep/ .theme-color {
   color: #fff;
-  fill: #fff;
 }
 
 .blue-theme /deep/ .theme-icon {
-  fill: #03A9F4;
+  color: #03A9F4;
 }
 
 .blue-theme /deep/ .theme-primary-color {
@@ -164,7 +156,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 .purple-theme.theme-bg {
   background-color: #7e57c2;
   color: #fff;
-  fill: #fff;
 }
 
 .purple-theme /deep/ .theme-bg-a,
@@ -174,11 +165,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 .purple-theme /deep/ .theme-color {
   color: #fff;
-  fill: #fff;
 }
 
 .purple-theme /deep/ .theme-icon {
-  fill: #7e57c2;
+  color: #7e57c2;
 }
 
 .purple-theme /deep/ .theme-primary-color {

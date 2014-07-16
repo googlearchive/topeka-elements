@@ -83,7 +83,7 @@ paper-fab.check-button {
   top: 148px;
   right: 16px;
   background-color: #f5f5f5;
-  fill: #cdcdcd;
+  color: #cdcdcd;
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 500ms, background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: -webkit-transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 500ms, background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transform: scale(0);
@@ -107,16 +107,16 @@ paper-fab.check-button {
 
 .answered paper-fab.check-button.correct {
   background-color: #00e676;
-  fill: #fff;
+  color: #fff;
 }
 
 .answered paper-fab.check-button.incorrect {
   background-color: #ff5252;
-  fill: #fff;
+  color: #fff;
 }
 
 .answered paper-fab.check-button {
-  fill: #626262;
+  color: #626262;
 }
 
 topeka-status-bar {
