@@ -92,7 +92,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         history.pushState(dummyState, '');
       }.bind(this);
 
-      this.startup();
+      if (!this.user) {
+        this.startup();
+      }
     },
 
     eventDelegates: {
