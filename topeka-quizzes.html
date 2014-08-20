@@ -23,6 +23,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../paper-fab/paper-fab.html">
 
+<!-- note: .question element has flex for IE10 compatibility -->
 <polymer-element name="topeka-quizzes" attributes="scores category avatar wide" vertical layout>
 <template>
 
@@ -34,7 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     
       <core-toolbar class="theme-bg" hero-id="punch-bottom" hero?="{{parentElement.selected !== 'empty'}}">
       
-        <div class="question" cross-fade-delayed>{{quiz.question}}</div>
+        <div class="question" flex cross-fade-delayed>{{quiz.question}}</div>
         
       </core-toolbar>
 

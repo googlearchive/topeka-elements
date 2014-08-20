@@ -75,9 +75,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <template repeat="{{item in quiz.options}}">
 
       <paper-item justified horizontal layout>
-        <span class="option-left" flex>{{item[0]}}</span>
+        <div class="option-left" flex>{{item[0]}}</div>
         <core-icon class="icon" icon="unfold-more"></core-icon>
-        <span class="option-right" flex>{{item[1]}}</span>
+        <div class="option-right" flex>{{item[1]}}</div>
       </paper-item>
 
     </template>
