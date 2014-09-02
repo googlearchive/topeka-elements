@@ -27,6 +27,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       overflow: hidden;
       width: 40px;
       height: 40px;
+      /* unclear why this is necessary; filed 
+      http://crbug.com/410054 */
+      will-change: transform;
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
     }
     
     paper-progress {
