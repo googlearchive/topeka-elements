@@ -22,7 +22,7 @@
     "core-style": "Polymer/core-style#master",
     "font-roboto": "Polymer/font-roboto#master",
     "paper-elements": "Polymer/paper-elements#master",
-    "platform": "Polymer/platform#master",
+    "webcomponentsjs": "Polymer/webcomponentsjs#master",
     "polymer": "Polymer/polymer#master",
     "firebase-element": "Polymer/firebase-element#master",
     "firebase": "*",
