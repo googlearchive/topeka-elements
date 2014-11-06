@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <style>
   
-    paper-button[raisedButton] {
+    paper-button[raised] {
       font-size: 14px;
       font-weight: 400;
       width: 80px;
@@ -28,30 +28,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       position: relative;
     }
 
-    paper-button[raisedButton].core-selected.false {
+    paper-button[raised].core-selected.false {
       background: #ff5252;
       color: #f1f1f1;
     }
     
-    paper-button[raisedButton].core-selected.true {
+    paper-button[raised].core-selected.true {
       background: #00e676;
       color: #f1f1f1;
     }
 
-    paper-button[raisedButton]::shadow #ripple {
+    paper-button[raised]::shadow #ripple {
       /*color: #03a9f4;*/
     }
 
-    paper-button[raisedButton]::shadow #focusBg {
+    paper-button[raised]::shadow #focusBg {
       /*background: #3367d6;*/
     }
 
-    paper-button[raisedButton][label=False] {
+    paper-button[raised][label=False] {
       -webkit-order: 1;
       order: 1;
     }
 
-    paper-button[raisedButton]::shadow #clip {
+    paper-button[raised]::shadow #clip {
       position: absolute;
       top: 0;
       right: 0;
@@ -68,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       justify-content: center;
     }
 
-    paper-button[raisedButton]::shadow #content > span {
+    paper-button[raised]::shadow #content > span {
       /*margin-top: 10px;*/
     }
 
@@ -82,8 +82,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
  
   <div horizontal layout center center-justified layout>
     <core-selector selected="{{value}}" horizontal layout>
-      <paper-button raisedButton isToggle label="False" class="false"></paper-button>
-      <paper-button raisedButton isToggle label="True" class="true"></paper-button>
+      <paper-button raised toggle class="false">False</paper-button>
+      <paper-button raised toggle class="true">True</paper-button>
     </core-selector>
   </div>
   
