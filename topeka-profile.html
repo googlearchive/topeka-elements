@@ -92,7 +92,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width: 56px;
       height: 56px;
       background-color: #f5f5f5;
-      fill: black;
+      color: black;
     }
 
     paper-fab {
@@ -157,9 +157,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </core-selector>
         </div>
         <div horizontal center layout>
-          <paper-button on-tap="{{handleLogout}}" label="Sign Out" hidden?="{{!user}}"></paper-button>
+          <paper-button on-tap="{{handleLogout}}" hidden?="{{!user}}">Sign Out</paper-button>
           <div flex></div>
-          <paper-fab id="check" icon="check" showing?="{{$.first.inputValue.length && $.last.inputValue.length && selectedAvatar !== undefined}}" on-tap="{{handleLogin}}"></paper-fab>
+          <paper-fab id="check" icon="check" showing?="{{$.first.value.length && $.last.value.length && selectedAvatar !== undefined}}" on-tap="{{handleLogin}}"></paper-fab>
         </div>
       </div>
     </div>
