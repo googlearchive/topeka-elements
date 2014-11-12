@@ -22,10 +22,6 @@
     "core-style": "Polymer/core-style#master",
     "font-roboto": "Polymer/font-roboto#master",
     "paper-elements": "Polymer/paper-elements#master",
-    "webcomponentsjs": "Polymer/webcomponentsjs#master",
-    "polymer": "Polymer/polymer#master",
-    "firebase-element": "Polymer/firebase-element#master",
-    "firebase": "*",
-    "firebase-simple-login": "*"
+    "firebase-element": "Polymer/firebase-element#master"
   }
 }
